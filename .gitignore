@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.DS_Store
+
+# Datos generados por la ingesta y el índice: se reconstruyen con los scripts
+data/
+
+# Normativa: los PDF no se versionan; su registro está en docs/CORPUS.md
+corpus/**/*.pdf
+
+# Copia local del documento de la Sociedad: la versión viva está en Drive
+docs/sociedad/
