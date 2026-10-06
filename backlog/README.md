@@ -9,7 +9,8 @@ contratos de `docs/ARQUITECTURA.md` y los archivos que lista en *Entradas*.
 - `tareas/<ID>.md`: la **especificación** de cada tarea y sus notas de cierre.
   El issue enlaza a este archivo; si hay diferencias, manda el archivo.
 - `TABLERO.md`: índice de todas las tareas con sus dependencias y su issue.
-  Los issues se crean fase a fase; las fases futuras aún no tienen issue.
+  Todas las tareas tienen issue; las de fases futuras esperan en *Backlog*
+  (ADR-004).
 - `_plantilla-tarea.md`: para proponer tareas nuevas.
 
 ## Áreas
@@ -38,8 +39,11 @@ frontend construyen la API y la web contra el mock.
 
 ## Estados
 
-Columnas del tablero: *Bloqueada* (le faltan dependencias) → *Disponible* →
-*En curso* → *En revisión* → *Hecha*.
+Columnas del tablero: *Backlog* (su fase aún no empezó) → *Bloqueada* (le
+faltan dependencias) → *Disponible* → *En curso* → *En revisión* → *Hecha*.
+
+Al abrir una fase, el docente mueve sus tareas de *Backlog* a *Disponible* o
+*Bloqueada*.
 
 Cuando una tarea se cierra, quien la cerró revisa en `TABLERO.md` qué tareas
 dependían de ella y mueve a *Disponible* las que ya tengan todas sus
@@ -51,4 +55,5 @@ dependencias cerradas.
 - Una tarea no se modifica mientras está `en-curso`, salvo *Notas de cierre*.
   Si la especificación está mal, se comenta en el PR y el docente la corrige.
 - Tarea nueva: copiar la plantilla, usar el siguiente número libre del área,
-  añadir una fila a `TABLERO.md` y pedir al docente que cree su issue.
+  añadir una fila a `TABLERO.md` y pedir al docente que cree su issue en cuanto
+  se acepte.
