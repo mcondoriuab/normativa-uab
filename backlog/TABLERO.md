@@ -8,17 +8,17 @@ aquí. Los issues se crean fase a fase. Flujo completo en `backlog/README.md`.
 
 | ID | Tarea | Área | Tamaño | Depende de | Issue |
 |---|---|---|---|---|---|
-| [SET-001](tareas/SET-001.md) | Guía de entorno para macOS y Linux | SET | S | — | — |
-| [SET-002](tareas/SET-002.md) | Primer pull request: añadirse al equipo (todos) | SET | S | — | — |
-| [SET-003](tareas/SET-003.md) | Guía de entorno para Windows | SET | S | — | — |
-| [SET-004](tareas/SET-004.md) | Guía de git para el equipo | SET | S | — | — |
-| [INV-001](tareas/INV-001.md) | Qué es un LLM, un token y por qué alucina | INV | S | — | — |
-| [INV-012](tareas/INV-012.md) | Experimento: cazar alucinaciones en chatbots | INV | S | — | — |
-| [INV-013](tareas/INV-013.md) | RAG a mano: con y sin los artículos | INV | S | — | — |
-| [INV-014](tareas/INV-014.md) | Estado del arte: asistentes de normativa universitaria | INV | M | — | — |
-| [INV-015](tareas/INV-015.md) | Mapa de actores y fuentes de la normativa | INV | S | — | — |
-| [INV-003](tareas/INV-003.md) | Elegir licencia del proyecto | INV | S | — | — |
-| [INV-002](tareas/INV-002.md) | "Entrenar" vs fine-tuning vs RAG | INV | M | INV-001, INV-012, INV-013 | — |
+| [SET-001](tareas/SET-001.md) | Guía de entorno para macOS y Linux | SET | S | — | [#1](https://github.com/mcondoriuab/normativa-uab/issues/1) |
+| [SET-002](tareas/SET-002.md) | Primer pull request: añadirse al equipo (todos) | SET | S | — | [#2](https://github.com/mcondoriuab/normativa-uab/issues/2) |
+| [SET-003](tareas/SET-003.md) | Guía de entorno para Windows | SET | S | — | [#3](https://github.com/mcondoriuab/normativa-uab/issues/3) |
+| [SET-004](tareas/SET-004.md) | Guía de git para el equipo | SET | S | — | [#4](https://github.com/mcondoriuab/normativa-uab/issues/4) |
+| [INV-001](tareas/INV-001.md) | Qué es un LLM, un token y por qué alucina | INV | S | — | [#5](https://github.com/mcondoriuab/normativa-uab/issues/5) |
+| [INV-012](tareas/INV-012.md) | Experimento: cazar alucinaciones en chatbots | INV | S | — | [#7](https://github.com/mcondoriuab/normativa-uab/issues/7) |
+| [INV-013](tareas/INV-013.md) | RAG a mano: con y sin los artículos | INV | S | — | [#8](https://github.com/mcondoriuab/normativa-uab/issues/8) |
+| [INV-014](tareas/INV-014.md) | Estado del arte: asistentes de normativa universitaria | INV | M | — | [#9](https://github.com/mcondoriuab/normativa-uab/issues/9) |
+| [INV-015](tareas/INV-015.md) | Mapa de actores y fuentes de la normativa | INV | S | — | [#10](https://github.com/mcondoriuab/normativa-uab/issues/10) |
+| [INV-003](tareas/INV-003.md) | Elegir licencia del proyecto | INV | S | — | [#6](https://github.com/mcondoriuab/normativa-uab/issues/6) |
+| [INV-002](tareas/INV-002.md) | "Entrenar" vs fine-tuning vs RAG | INV | M | INV-001, INV-012, INV-013 | [#11](https://github.com/mcondoriuab/normativa-uab/issues/11) |
 
 ## F1: Corpus de la carrera, API desplegada y web vacía
 
