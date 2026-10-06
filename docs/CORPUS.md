@@ -21,7 +21,8 @@ está al día, las citas apuntan a normativa derogada — que es peor que no cit
 ## Corpus semilla
 
 Mientras la solicitud formal avanza se trabaja con los documentos ya públicos
-del sitio web. El MVP usa solo la normativa de **Ingeniería de Sistemas** y la
+del sitio web y con los que el equipo ya tenía (decisión del 2026-10-06; se
+reúnen en una carpeta de Drive en la tarea INV-016, no en git). El MVP usa solo la normativa de **Ingeniería de Sistemas** y la
 normativa general que le aplica, en `corpus/ingenieria-sistemas/` (tareas
 INV-004 e INV-005). Añadir normativa después es copiar PDFs en la carpeta de la
 carrera y volver a ejecutar la ingesta y el índice.

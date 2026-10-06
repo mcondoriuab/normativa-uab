@@ -6,7 +6,7 @@ El estado de cada tarea se lleva en el tablero de GitHub Projects
 **Normativa UAB**, donde cada tarea es un issue:
 
 ```
-Bloqueada → Disponible → En curso → En revisión → Hecha
+Backlog → Bloqueada → Disponible → En curso → En revisión → Hecha
 ```
 
 1. **Tomar.** En el tablero, elige un issue en *Disponible*, asígnatelo

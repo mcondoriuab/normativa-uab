@@ -1,6 +1,6 @@
 # ADR-003: Estado de las tareas en GitHub Projects
 
-**Estado:** aceptada · **Fecha:** 2026-09-29 · **Tarea:** —
+**Estado:** aceptada; la creación fase a fase, reemplazada por ADR-004 · **Fecha:** 2026-09-29 · **Tarea:** —
 
 ## Contexto
 
