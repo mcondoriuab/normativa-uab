@@ -24,12 +24,12 @@ que se completa cada paso.
 
 | # | Paso | Hecho |
 |---|---|---|
-| 1 | Crear el repositorio en GitHub y subir `main` | |
-| 2 | Crear cuenta en [Render](https://render.com), entrando con GitHub | |
-| 3 | Crear cuenta en [Supabase](https://supabase.com) y un proyecto `normativa-uab` en la región **São Paulo** (la más cercana) | |
+| 1 | Crear el repositorio en GitHub y subir `main` | 2026-09-29 |
+| 2 | Crear cuenta en [Render](https://render.com), entrando con GitHub | 2026-10-09 |
+| 3 | Crear cuenta en [Supabase](https://supabase.com) y un proyecto `normativa-uab` en la región **São Paulo** (la más cercana) | 2026-10-09 |
 | 4 | Crear la clave de API del proveedor de embeddings (INV-009) | |
 | 5 | Crear la clave de API del LLM (INV-010) | |
-| 6 | Instalar los conectores de Claude Code (sección 3) | |
+| 6 | Instalar los conectores de Claude Code (sección 3) | Render: 2026-10-09 · Supabase: pendiente |
 | 7 | Compartir con el equipo, **por un canal privado**, los valores de `.env` para desarrollo | |
 
 Las claves nunca se suben a git ni se pegan en issues, PRs o chats de grupo.
