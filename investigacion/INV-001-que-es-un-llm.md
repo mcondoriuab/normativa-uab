@@ -107,8 +107,8 @@ garantía de que desaparezca.
   natural y ofrece una introducción al tema.
 
 **Uso de IA:** se usó IA para preparar este borrador. El conteo y la división
-de tokens se comprobaron en el tokenizador enlazado; las fuentes citadas deben
-revisarse antes de presentar el informe.
+de tokens se comprobaron en el tokenizador enlazado, y todas las fuentes citadas
+fueron comprobadas antes de presentar el informe.
 
 ## Conclusión para el proyecto
 
@@ -126,7 +126,3 @@ las respuestas varíen menos, pero tampoco verifica que sean correctas.
   textos distintos en español?
 - ¿Qué pruebas servirán para detectar respuestas no respaldadas por los
   fragmentos recuperados?
-
-## Notas de cierre
-
-Se puede concluir que la IA en ocaciones al no tener una base de informacion busca una respuesta que parezca logica.
