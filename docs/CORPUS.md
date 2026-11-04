@@ -7,7 +7,7 @@ está al día, las citas apuntan a normativa derogada — que es peor que no cit
 
 | Documento (nombre de archivo) | Carrera | Versión / año | Vigente desde | Origen (URL o persona) | ¿Público? | Tiene texto extraíble |
 |---|---|---|---|---|---|---|
-| _(rellenar en INV-004 / INV-005)_ | | | | | | |
+| _(rellenar en INV-004)_ | | | | | | |
 
 ## Procedencia
 
@@ -24,8 +24,8 @@ falta al añadir normativa que no esté publicada.
 ## Corpus semilla
 
 Se empieza con los documentos que el equipo ya tenía y con los del sitio web,
-reunidos en la carpeta de Drive del corpus (INV-016), no en git. Los PDF van
-en `corpus/ingenieria-sistemas/` (tareas INV-004 e INV-005). Añadir normativa
+reunidos en la carpeta de Drive del corpus (INV-004), no en git. Los PDF van
+en `corpus/ingenieria-sistemas/` (tarea INV-004). Añadir normativa
 después es copiar PDFs en la carpeta de la carrera y volver a ejecutar la
 ingesta y el índice.
 

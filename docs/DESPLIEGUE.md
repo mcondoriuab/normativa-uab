@@ -79,7 +79,7 @@ Reglas de uso:
 - **Base de datos:** las migraciones de `db/migraciones/` se aplican en orden en
   el editor SQL de Supabase, y se anota en `db/README.md` cuándo se aplicó cada
   una.
-- **Datos:** la ingesta y la indexación (IA-005, IA-008) se ejecutan en local y
+- **Datos:** la ingesta y la indexación (IA-002, IA-008) se ejecutan en local y
   escriben en Supabase. No hace falta redesplegar al cambiar la normativa.
 
 ## 5. Límites del plan gratuito que hay que conocer
@@ -88,7 +88,7 @@ Reglas de uso:
 |---|---|---|
 | Render duerme tras 15 min sin uso | La primera visita tarda ~1 min | Aviso de "despertando…" en la web; abrirla antes de una demo |
 | Render: 512 MB de RAM | No cabe un modelo de embeddings local | Embeddings por API (ADR-002) |
-| Supabase pausa tras 7 días sin actividad | La API deja de encontrar la base | Tarea programada que la consulta (BE-009) |
+| Supabase pausa tras 7 días sin actividad | La API deja de encontrar la base | Tarea programada que la consulta (BE-008) |
 | Supabase: 500 MB | Varios miles de fragmentos caben de sobra | Vigilar el tamaño si se añaden carreras |
 | Cuotas gratuitas de embeddings y LLM | Pueden agotarse o limitar la velocidad | Indexar por lotes; vigilar el uso en el panel |
 
