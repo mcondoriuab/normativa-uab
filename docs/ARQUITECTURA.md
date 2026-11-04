@@ -9,8 +9,8 @@ construye una tarea del backlog (entre paréntesis).
 corpus/<carrera>/*.pdf                                  (en local)
         │
         ▼
-[1] Ingesta        ia/extraer.py (IA-002) + ia/trocear.py (IA-003, IA-004)
-        │          CLI: python -m ia.ingestar (IA-005)
+[1] Ingesta        ia/extraer.py + ia/trocear.py (IA-002)
+        │          CLI: python -m ia.ingestar (IA-002)
         ▼
   data/fragmentos.json                                  (en local, no va a git)
         │
@@ -18,16 +18,16 @@ corpus/<carrera>/*.pdf                                  (en local)
 [2] Índice         ia/indexar.py (IA-008): embeddings por API
         │          → tabla `fragmentos` en Supabase (esquema: BE-008)
         ▼
-[3] Búsqueda       ia/bm25.py (IA-007) + ia/vectorial.py (IA-009, pgvector)
-        │          fusión: ia/hibrida.py (IA-010) · CLI: python -m ia.buscar (IA-011)
+[3] Búsqueda       ia/bm25.py (IA-007) + ia/vectorial.py (IA-008, pgvector)
+        │          fusión: ia/hibrida.py · CLI: python -m ia.buscar (IA-007)
         ▼
-[4] Generación     ia/llm.py (IA-014) + ia/prompts.py (IA-015)
-        │          ia/responder.py (IA-016, IA-017)
+[4] Generación     ia/llm.py + ia/prompts.py (INV-010)
+        │          ia/responder.py (IA-016)
         ▼
-[5] API            apps/api/main.py (BE-001…BE-005, BE-010)
+[5] API            apps/api/main.py (BE-001, BE-002, BE-003)
         │
         ▼
-[6] Web            apps/web/index.html, estilos.css, app.js (FE-001…FE-006)
+[6] Web            apps/web/index.html, estilos.css, app.js (FE-001, FE-003)
 ```
 
 Todos los comandos se ejecutan **desde la raíz del repositorio**. Las

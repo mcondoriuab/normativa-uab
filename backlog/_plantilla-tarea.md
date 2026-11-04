@@ -3,8 +3,9 @@ id: AREA-000
 titulo: Verbo + objeto, en pocas palabras
 area: INV | IA | BE | FE | SET
 fase: F0 | F1 | F2 | F3 | F4 | F5
-tamano: S | M
+tamano: S | M | L
 depende_de: []
+fecha_limite: AAAA-MM-DD
 ---
 
 # AREA-000: título

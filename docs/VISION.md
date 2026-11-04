@@ -59,7 +59,7 @@ el equipo en la tarea **INV-002**.
 **Criterio de "MVP terminado":** con el golden set de la carrera, el sistema
 recupera el artículo correcto en su top-5 en la mayoría de las preguntas, rechaza
 las preguntas fuera de corpus, y cualquier persona puede usarlo desde el móvil.
-Los números exactos se fijan tras la primera medición (IA-013).
+Los números exactos se fijan tras la primera medición (IA-012).
 
 ## Después del MVP
 

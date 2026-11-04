@@ -1,6 +1,8 @@
 # investigacion/
 
-Informes de las tareas de investigación (`INV-*`). Un archivo por tarea:
+Informes de las tareas de investigación (`INV-*`) y de las partes de
+investigación de algunas tareas `IA-*`. Cada archivo empieza por el ID de su
+tarea:
 `INV-001-que-es-un-llm.md`.
 
 ## Formato
