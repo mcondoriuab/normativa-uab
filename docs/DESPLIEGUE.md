@@ -75,7 +75,9 @@ Reglas de uso:
 ## 4. Cómo se despliega
 
 - **Automático:** cada merge a `main` redespliega en Render (`render.yaml`, tarea
-  BE-006).
+  BE-006). Requiere la app de GitHub de Render instalada en el repositorio
+  (cuenta `mcondoriuab` → *Only select repositories* → `normativa-uab`); sin
+  ella Render no se entera de los push y no redespliega.
 - **Base de datos:** las migraciones de `db/migraciones/` se aplican en orden en
   el editor SQL de Supabase, y se anota en `db/README.md` cuándo se aplicó cada
   una.
