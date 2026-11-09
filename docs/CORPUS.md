@@ -7,7 +7,34 @@ está al día, las citas apuntan a normativa derogada — que es peor que no cit
 
 | Documento (nombre de archivo) | Carrera | Versión / año | Vigente desde | Origen (URL o persona) | ¿Público? | Tiene texto extraíble |
 |---|---|---|---|---|---|---|
-| _(rellenar en INV-004)_ | | | | | | |
+| reglamento-estudiantil-2016.pdf | General | 2016 | febrero 2016 | https://drive.google.com/file/d/1k6uMRlLGA8hLTub1rJZpKoWhwhlfNKlI/view (enlazado en https://paginanueva.uab.edu.bo/reglamentos-uab/) | sí | |
+| reglamento-de-graduacion-2016.pdf | General | 2016 | febrero 2016 | https://drive.google.com/file/d/1icpU6V0iTDmAC9ANxSKcpNbuG0cFzaTH/view (enlazado en https://paginanueva.uab.edu.bo/reglamentos-uab/) | sí | |
+| reglamento-de-becas-2016.pdf | General | 2016 | febrero 2016 | https://drive.google.com/file/d/190sR7nWnbP78TD1aWV1tkuRkRm8mhnGd/view (enlazado en https://paginanueva.uab.edu.bo/reglamentos-uab/) | sí | |
+| reglamento-de-investigacion-2021.pdf | General | 2021 (vigencia dudosa: la portada dice 2021 y el cierre, 2016) | — | https://www.uab.edu.bo/assets/pdf/REGLAMENTO-DE-INVESTIGACION%202016.pdf | sí | |
+| reglamento-de-interaccion-social-y-difusion-cultural-2016.pdf | General | 2016 | febrero 2016 | https://drive.google.com/file/d/1o_xpo1Vx84V4cRr-kX_cww-3G_ycFFbO/view (enlazado en https://paginanueva.uab.edu.bo/reglamentos-uab/) | sí | |
+
+Quedan fuera, aunque son públicos, porque no regulan al estudiante: el
+Reglamento Docente, el del Personal Administrativo y el de Autoevaluación
+(misma página). La versión de 2016 del Reglamento de Investigación (Drive,
+`1MG9axfNtsly_TJraaLy318oY37yVibaT`) se sustituye por la de 2021.
+
+El equipo reunió en Drive las versiones Word de 2016
+(https://drive.google.com/drive/folders/19lMybgMXMKrss-P0ZQqa1P4drBBXGhQv),
+sin origen conocido. Comparadas palabra a palabra, Estudiantil, Graduación,
+Becas e Interacción Social tienen el mismo texto que los PDF de la tabla
+(solo cambian los pies de página). El Word del Estudiantil es la versión
+"corregida" de octubre de 2016, así que el PDF publicado ya incluye esas
+correcciones aunque la portada diga febrero. El Word de Investigación es la
+versión de 2016, ya sustituida por la de 2021. Los de Docente y Autoevaluación
+quedan fuera por lo dicho arriba. Por eso el corpus usa los PDF oficiales y no
+los PDF convertidos desde Word.
+
+### Documentos no públicos
+
+Ninguno. El *Reglamento Institucional* aparece en la lista de
+https://paginanueva.uab.edu.bo/secretaria-general/, pero sin enlace: falta
+conseguirlo. El plan de estudios de la carrera solo está como texto en
+https://www.uab.edu.bo/carrers/systems-engineering, no como PDF.
 
 ## Procedencia
 
