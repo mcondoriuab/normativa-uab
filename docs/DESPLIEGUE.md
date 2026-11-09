@@ -78,6 +78,12 @@ Reglas de uso:
   BE-006). Requiere la app de GitHub de Render instalada en el repositorio
   (cuenta `mcondoriuab` → *Only select repositories* → `normativa-uab`); sin
   ella Render no se entera de los push y no redespliega.
+- **Vista previa de la web:** hasta que BE-002 sirva `apps/web` desde la API,
+  un sitio estático aparte (`normativa-uab-web` en `render.yaml`) publica
+  `apps/web` en cada merge. Cada PR que toque `apps/web` recibe además su propia
+  URL de vista previa: aparece en el PR como *deployment* (*View deployment*) y
+  se borra al cerrar el PR. Cuando FE-003 llame a `/preguntar`, la app de verdad
+  es la URL de la API y este sitio se retira.
 - **Base de datos:** las migraciones de `db/migraciones/` se aplican en orden en
   el editor SQL de Supabase, y se anota en `db/README.md` cuándo se aplicó cada
   una.
