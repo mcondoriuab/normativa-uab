@@ -1,3 +1,5 @@
 # Dependencias del proyecto; cada tarea añade las suyas
 fastapi
 uvicorn[standard]
+groq
+python-dotenv
