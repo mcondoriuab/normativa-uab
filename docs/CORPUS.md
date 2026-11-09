@@ -5,9 +5,20 @@ está al día, las citas apuntan a normativa derogada — que es peor que no cit
 
 ## Documentos
 
-| Documento (nombre de archivo) | Carrera | Versión / año | Vigente desde | Origen (URL o persona) | Permiso | Tiene texto extraíble |
+| Documento (nombre de archivo) | Carrera | Versión / año | Vigente desde | Origen (URL o persona) | ¿Público? | Tiene texto extraíble |
 |---|---|---|---|---|---|---|
-| _(rellenar en INV-004 / INV-005)_ | | | | | | |
+| `reglamento-autoevaluacion-2016.pdf` | General | 2016 (vigencia dudosa) | — | [Carpeta Drive del corpus](https://drive.google.com/drive/folders/19lMybgMXMKrss-P0ZQqa1P4drBBXGhQv?usp=sharing) | no sé | |
+| `reglamento-becas-2016.pdf` | General | 2016 (vigencia dudosa) | — | [Carpeta Drive del corpus](https://drive.google.com/drive/folders/19lMybgMXMKrss-P0ZQqa1P4drBBXGhQv?usp=sharing) | no sé | |
+| `reglamento-docente-2016.pdf` | General | 2016 (vigencia dudosa) | — | [Carpeta Drive del corpus](https://drive.google.com/drive/folders/19lMybgMXMKrss-P0ZQqa1P4drBBXGhQv?usp=sharing) | no sé | |
+| `reglamento-estudiantil-2016.pdf` | General | 2016 (vigencia dudosa) | — | [Carpeta Drive del corpus](https://drive.google.com/drive/folders/19lMybgMXMKrss-P0ZQqa1P4drBBXGhQv?usp=sharing) | no sé | |
+| `reglamento-graduacion-2016.pdf` | General | 2016 (vigencia dudosa) | — | [Carpeta Drive del corpus](https://drive.google.com/drive/folders/19lMybgMXMKrss-P0ZQqa1P4drBBXGhQv?usp=sharing) | no sé | |
+| `reglamento-interaccion-social-difusion-cultural-2015-2016.pdf` | General | 2015–2016 (vigencia dudosa) | — | [Carpeta Drive del corpus](https://drive.google.com/drive/folders/19lMybgMXMKrss-P0ZQqa1P4drBBXGhQv?usp=sharing) | no sé | |
+| `reglamento-investigacion-2016.pdf` | General | 2016 (vigencia dudosa) | — | [Carpeta Drive del corpus](https://drive.google.com/drive/folders/19lMybgMXMKrss-P0ZQqa1P4drBBXGhQv?usp=sharing) | no sé | |
+
+### Documentos no públicos
+
+Ninguno identificado. El carácter público de los documentos reunidos está
+pendiente de verificar.
 
 ## Procedencia y permisos
 
