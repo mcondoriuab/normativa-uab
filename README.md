@@ -14,8 +14,10 @@ código se va construyendo tarea a tarea, desde cero.
 
 ## Estado actual
 
-**Fase 0 — Arranque.** Todavía no hay código. El primer MVP responde preguntas
-sobre la normativa de **una sola carrera** (Ingeniería de Sistemas). Ver
+**Fase 1 — Primeras piezas.** Ya hay despliegue automático en Render (cada merge
+a `main` se publica solo), con una API que por ahora solo responde `/salud`.
+El primer MVP responde preguntas sobre la normativa de **una sola carrera**
+(Ingeniería de Sistemas), y se presenta el **19 de noviembre**. Ver
 [`docs/VISION.md`](docs/VISION.md).
 
 ## Quiero empezar a trabajar
