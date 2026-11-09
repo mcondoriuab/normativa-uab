@@ -23,8 +23,8 @@ No cambian. Solo se les pone fecha límite.
 | [SET-002](tareas/SET-002.md) | Primer pull request: añadirse al equipo (todos) | SET | hecha | [#2](https://github.com/mcondoriuab/normativa-uab/issues/2) |
 | [SET-003](tareas/SET-003.md) | Guía de entorno para Windows | SET | hecha | [#3](https://github.com/mcondoriuab/normativa-uab/issues/3) |
 | [SET-004](tareas/SET-004.md) | Guía de git para el equipo | SET | hecha | [#4](https://github.com/mcondoriuab/normativa-uab/issues/4) |
-| [INV-001](tareas/INV-001.md) | Qué es un LLM, un token y por qué alucina | INV | 2026-11-06 | [#5](https://github.com/mcondoriuab/normativa-uab/issues/5) |
-| [BE-001](tareas/BE-001.md) | API mínima con `/salud` | BE | 2026-11-06 | [#21](https://github.com/mcondoriuab/normativa-uab/issues/21) |
+| [INV-001](tareas/INV-001.md) | Qué es un LLM, un token y por qué alucina | INV | hecha | [#5](https://github.com/mcondoriuab/normativa-uab/issues/5) |
+| [BE-001](tareas/BE-001.md) | API mínima con `/salud` | BE | hecha | [#21](https://github.com/mcondoriuab/normativa-uab/issues/21) |
 | [INV-003](tareas/INV-003.md) | Elegir licencia del proyecto | INV | 2026-11-07 | [#6](https://github.com/mcondoriuab/normativa-uab/issues/6) |
 | [INV-012](tareas/INV-012.md) | Experimento: cazar alucinaciones en chatbots | INV | 2026-11-07 | [#7](https://github.com/mcondoriuab/normativa-uab/issues/7) |
 | [INV-013](tareas/INV-013.md) | RAG a mano: con y sin los artículos | INV | 2026-11-07 | [#8](https://github.com/mcondoriuab/normativa-uab/issues/8) |
@@ -34,13 +34,13 @@ No cambian. Solo se les pone fecha límite.
 
 | ID | Tarea | Área | Tamaño | Depende de | Fecha límite | Absorbe | Issue |
 |---|---|---|---|---|---|---|---|
-| [INV-004](tareas/INV-004.md) | Corpus de la carrera: reunir, inventariar y registrar los PDF | INV | L | — | 2026-11-06 | INV-016, INV-005 | [#16](https://github.com/mcondoriuab/normativa-uab/issues/16) |
-| [FE-001](tareas/FE-001.md) | Página estática: maqueta HTML y estilos responsive | FE | M | — | 2026-11-07 | FE-002 | [#24](https://github.com/mcondoriuab/normativa-uab/issues/24) |
+| [INV-004](tareas/INV-004.md) | Corpus de la carrera: reunir, inventariar y registrar los PDF | INV | L | — | hecha | INV-016, INV-005 | [#16](https://github.com/mcondoriuab/normativa-uab/issues/16) |
+| [FE-001](tareas/FE-001.md) | Página estática: maqueta HTML y estilos responsive | FE | M | — | hecha | FE-002 | [#24](https://github.com/mcondoriuab/normativa-uab/issues/24) |
 | [IA-001](tareas/IA-001.md) | Golden set a partir de preguntas reales | IA | L | INV-004 | 2026-11-09 | INV-007 | [#20](https://github.com/mcondoriuab/normativa-uab/issues/20) |
 | [BE-002](tareas/BE-002.md) | `/preguntar` simulado y la web servida desde la API | BE | M | BE-001, FE-001 | 2026-11-09 | BE-005 | [#22](https://github.com/mcondoriuab/normativa-uab/issues/22) |
 | [IA-002](tareas/IA-002.md) | Ingesta: de los PDF a fragmentos revisados | IA | L | INV-004 | 2026-11-10 | INV-006, IA-003, IA-004, IA-005, IA-006 | [#26](https://github.com/mcondoriuab/normativa-uab/issues/26) |
-| [BE-006](tareas/BE-006.md) ⚙ | Primer despliegue en Render | BE | M | BE-001 | 2026-11-10 | — | [#23](https://github.com/mcondoriuab/normativa-uab/issues/23) |
-| [BE-008](tareas/BE-008.md) ⚙ | Supabase: esquema, `ia/db.py` y mantener la base activa | BE | L | BE-006 | 2026-11-10 | BE-009 | [#31](https://github.com/mcondoriuab/normativa-uab/issues/31) |
+| [BE-006](tareas/BE-006.md) ⚙ | Primer despliegue en Render | BE | M | BE-001 | hecha | — | [#23](https://github.com/mcondoriuab/normativa-uab/issues/23) |
+| [BE-008](tareas/BE-008.md) ⚙ | Supabase: esquema, `ia/db.py` y mantener la base activa | BE | L | BE-006, BE-001 (Parte 2) | 2026-11-10 | BE-009 | [#31](https://github.com/mcondoriuab/normativa-uab/issues/31) |
 
 ## Semana 2: del 11 al 18 de noviembre
 
