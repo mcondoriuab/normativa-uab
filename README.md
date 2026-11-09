@@ -14,8 +14,10 @@ código se va construyendo tarea a tarea, desde cero.
 
 ## Estado actual
 
-**Fase 0 — Arranque.** Todavía no hay código. El primer MVP responde preguntas
-sobre la normativa de **una sola carrera** (Ingeniería de Sistemas). Ver
+**Fase 1 — Primeras piezas.** Ya hay despliegue automático en Render (cada merge
+a `main` se publica solo), con una API que por ahora solo responde `/salud`.
+El primer MVP responde preguntas sobre la normativa de **una sola carrera**
+(Ingeniería de Sistemas), y se presenta el **19 de noviembre**. Ver
 [`docs/VISION.md`](docs/VISION.md).
 
 ## Quiero empezar a trabajar
@@ -52,9 +54,13 @@ cuando empiezan las fases que las usan.
 
 La web y la API se despliegan en **Render** y la base de datos vive en
 **Supabase**, ambos en plan gratuito y manejables desde Claude Code con sus
-conectores. URL pública: <https://normativa-uab-ldxj.onrender.com> (hoy solo
-responde `/salud`). Detalle en
-[`docs/DESPLIEGUE.md`](docs/DESPLIEGUE.md).
+conectores. URLs públicas:
+
+- Web: <https://normativa-uab-web-ldxj.onrender.com> (vista previa de
+  `apps/web` hasta que la API sirva la web).
+- API: <https://normativa-uab-ldxj.onrender.com> (hoy solo responde `/salud`).
+
+Detalle en [`docs/DESPLIEGUE.md`](docs/DESPLIEGUE.md).
 
 ## Documentación
 

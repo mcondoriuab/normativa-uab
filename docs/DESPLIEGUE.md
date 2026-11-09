@@ -78,6 +78,12 @@ Reglas de uso:
   BE-006). Requiere la app de GitHub de Render instalada en el repositorio
   (cuenta `mcondoriuab` → *Only select repositories* → `normativa-uab`); sin
   ella Render no se entera de los push y no redespliega.
+- **Vista previa de la web:** hasta que BE-002 sirva `apps/web` desde la API,
+  un sitio estático aparte (`normativa-uab-web` en `render.yaml`) publica
+  `apps/web` en cada merge. Cada PR que toque `apps/web` recibe además su propia
+  URL de vista previa: aparece en el PR como *deployment* (*View deployment*) y
+  se borra al cerrar el PR. Cuando FE-003 llame a `/preguntar`, la app de verdad
+  es la URL de la API y este sitio se retira.
 - **Base de datos:** las migraciones de `db/migraciones/` se aplican en orden en
   el editor SQL de Supabase, y se anota en `db/README.md` cuándo se aplicó cada
   una.
@@ -99,3 +105,4 @@ Reglas de uso:
 | Fecha | Qué se desplegó | URL | Quién |
 |---|---|---|---|
 | 2026-11-09 | Hola mundo: `/salud` con `apps/api/hola.py` provisional (BE-006, PR #68) | <https://normativa-uab-ldxj.onrender.com> | Docente |
+| 2026-11-09 | Vista previa de `apps/web` como sitio estático, con URL propia por PR (PR #78) | <https://normativa-uab-web-ldxj.onrender.com> | Docente |
