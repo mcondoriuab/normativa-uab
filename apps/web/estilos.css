@@ -1,16 +1,14 @@
 /* ========================================
-   ESTILO IDENTIDAD VISUAL - Universidad Jaume I (UJI)
-   Colores oficiales: Azul ujiii y gris
+   ESTILO FE-001 - Normativa UAB
+   Variables: --fondo, --texto, --acento, --borde
    ======================================== */
 
-/* Variables -- colores institucionales */
+/* Variables oficiales -- pedir en la tarea */
 :root {
-  --ujii-blue: #2a6f97;     /* Azul principal UJI */
-  --ujii-blue-light: #3a87c2; /* Azul más claro */
-  --ujii-gray: #f8f9fa;     /* Gris muy claro */
-  --ujii-dark-gray: #e9ecef; /* Gris oscuro para texto */
-  --ujii-accent: #2d5a27;   /* Verde acento opcional */
-  --max-width: 800px;
+  --fondo: #f8f9fa;
+  --texto: #212529;
+  --acento: #6c757d;
+  --borde: #dee2e6;
 }
 
 /* --- Reset y base --- */
@@ -20,119 +18,76 @@
   padding: 0;
 }
 
+/* --- Body con variables --- */
 body {
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  background-color: var(--ujii-gray);
-  color: var(--ujii-dark-gray);
+  background-color: var(--fondo);
+  color: var(--texto);
   line-height: 1.6;
-  max-width: var(--max-width);
   margin: 0 auto;
   padding: 2rem;
+  /* max-width: 800px */ <-- QUITAR según revisión
+  /* width: 100%; */   <-- body ya es full width
 }
 
-/* --- Header con logo --- */
+/* --- Header --- */
 header {
   text-align: center;
-  margin-bottom: 3rem;
-  padding-bottom: 2rem;
-  border-bottom: 2px solid var(--ujii-blue);
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--borde);
 }
 
-.header-container {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
+header h1 {
+  color: var(--texto);
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
 }
 
-.header-logo {
-  width: 40px;
-  height: 40px;
-  background: var(--ujii-blue);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: bold;
-  font-size: 1.2rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-.header-logo svg {
-  width: 20px;
-  height: 20px;
-}
-
-.header-content h1 {
-  color: var(--ujii-blue);
-  font-size: 2rem;
-  margin: 0;
-}
-
-.header-content h1::after {
-  content: '';
-  display: block;
-  width: 40px;
-  height: 3px;
-  background: var(--ujii-accent);
-  margin-top: 0.5rem;
-}
-
-header p {
-  color: var(--ujii-dark-gray);
-  font-size: 0.95rem;
-  opacity: 0.9;
+/* Texto del aviso legal con estilo para que no parezca error */
+.aviso-legal {
+  background-color: var(--fondo);
+  color: var(--texto);
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  border: 1px solid var(--borde);
+  border-radius: 4px;
+  font-size: 0.875rem;
+  /* Evitar que sea < 16px: 0.875rem = 14px, así que forzamos 16px */
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 /* --- Form --- */
 .form-section {
-  background: white;
+  background-color: var(--fondo);
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  margin-bottom: 3rem;
-  border-left: 4px solid var(--ujii-blue);
+  margin-bottom: 2rem;
+  border: 1px solid var(--borde);
 }
 
 .form-section h2 {
-  color: var(--ujii-blue);
+  color: var(--texto);
   margin-bottom: 1.5rem;
   font-size: 1.25rem;
-  border-left: 3px solid var(--ujii-accent);
-  padding-left: 0.75rem;
+  border-left: 3px solid var(--acento);
+  padding-left: 0.5rem;
 }
 
 label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 500;
-  color: var(--ujii-dark-gray);
+  font-size: 0.875rem;
 }
 
-textarea {
-  width: 100%;
-  min-height: 120px;
-  padding: 0.875rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 1rem;
-  resize: vertical;
-  font-family: inherit;
-}
-
-textarea:focus {
-  outline: none;
-  border-color: var(--ujii-blue);
-  box-shadow: 0 0 0 3px rgba(42, 111, 151, 0.15);
-}
-
+/* Botón ocupar todo ancho en móvil */
 button {
-  background: var(--ujii-blue);
+  background-color: var(--acento);
   color: white;
   border: none;
-  padding: 0.875rem 1.5rem;
+  padding: 0.875rem;
   border-radius: 4px;
   font-size: 1rem;
   font-weight: 500;
@@ -142,74 +97,99 @@ button {
 }
 
 button:hover {
-  background: var(--ujii-blue-light);
+  opacity: 0.9;
 }
 
 button:focus-visible {
-  outline: 2px solid var(--ujii-accent);
+  outline: 2px solid var(--texto);
   outline-offset: 2px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--borde);
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  background-color: white;
+  color: var(--texto);
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--acento);
+  box-shadow: 0 0 0 3px rgba(108, 117, 125, 0.15);
 }
 
 /* --- Respuesta --- */
 .respuesta-section {
-  background: white;
+  background-color: var(--fondo);
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  margin-bottom: 3rem;
-  border-left: 4px solid var(--ujii-blue);
+  margin-bottom: 2rem;
+  border: 1px solid var(--borde);
 }
 
 .respuesta-section h2 {
-  color: var(--ujii-blue);
+  color: var(--texto);
   margin-bottom: 1.5rem;
   font-size: 1.25rem;
-  border-left: 3px solid var(--ujii-accent);
-  padding-left: 0.75rem;
+  border-left: 3px solid var(--acento);
+  padding-left: 0.5rem;
 }
 
 #respuesta-texto {
   margin-bottom: 2rem;
-  color: var(--ujii-dark-gray);
+  font-size: 1rem;
 }
 
-#respuesta-texto strong {
-  color: var(--ujii-blue);
-}
-
+/* Citas con fondo gris claro para distinguirse */
 #citas {
   list-style: none;
-  padding-left: 1rem;
+  padding: 1rem 0;
+  margin: 0;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  padding: 1rem;
 }
 
 #citas li {
   margin-bottom: 0.75rem;
   padding-left: 1.5rem;
   position: relative;
+  font-size: 1rem;
 }
 
+/* QUITAR ::before contador - las citations ya tienen [1]/[2] a mano */
 #citas li::before {
-  content: '[' counter(list-item) ']';
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: var(--ujii-blue);
-  font-weight: bold;
-  counter-increment: list-item;
+  /* display: none; */ <-- QUITAR completamente
+  /* content: '[' counter(list-item) ']'; */ <-- QUITAR
+  /* position: absolute; */ <-- QUITAR
+  /* left: 0; */ <-- QUITAR
+  /* top: 0; */ <-- QUITAR
+  /* color: var(--acento); */ <-- QUITAR
+  /* font-weight: bold; */ <-- QUITAR
+  /* counter-increment: list-item; */ <-- QUITAR
 }
 
 /* --- Footer --- */
 footer {
   text-align: center;
-  margin-top: 4rem;
-  padding-top: 2rem;
-  border-top: 1px solid #ddd;
-  color: var(--ujii-dark-gray);
-  font-size: 0.875rem;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--borde);
+  color: var(--texto);
+  font-size: 16px; /* Forzar 16px, 0.875rem = 14px es demasiado pequeño */
+  margin: 0 auto;
+  max-width: 100%;
 }
 
 footer a {
-  color: var(--ujii-blue);
+  color: var(--acento);
   text-decoration: none;
 }
 
@@ -217,14 +197,28 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* --- Responsive --- */
+/* --- Responsive - MÓVIL PRIMERO --- */
+/* Base móvil: full width, sin max-width restrictivo */
+
+/* A partir de 768px (escritorio) */
 @media (min-width: 768px) {
   body {
-    padding: 3rem;
+    /* max-width: 720px */ <-- Qué hacer aquí según tamaño
+    margin: 0 auto;
+    /* width: auto; */
+  }
+
+  /* En móvil el botón ya es full width por defecto */
+  /* En escritorio podemos centrar o dejar como está */
+
+  header {
+    padding-bottom: 2rem;
   }
 
   .form-section,
   .respuesta-section {
     padding: 2.5rem;
+    max-width: 720px;
+    margin: 0 auto;
   }
 }
