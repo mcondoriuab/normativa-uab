@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asistente de Normativa UAB</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header>
+    <h1>Asistente de Normativa UAB</h1>
+    <p class="aviso-legal">Herramienta de apoyo. El texto oficial y vinculante es el publicado por la universidad.</p>
+  </header>
+
+  <main>
+    <form id="pregunta-form">
+      <label for="pregunta">Tu pregunta:</label>
+      <textarea id="pregunta" name="pregunta" rows="3" placeholder="Escribe tu duda sobre la normativa..." required></textarea>
+      <button type="submit">Preguntar</button>
+    </form>
+
+    <section id="respuesta">
+      <h2>Respuesta</h2>
+      <p>Puedes faltar hasta un 20% de las clases [1].</p>
+      <h3>Citas</h3>
+      <ul>
+        <li>
+          <strong>[1]</strong> Reglamento estudiantil, artículo 47, página 12:
+          "Artículo 47. El estudiante que acumule ..."
+        </li>
+        <li>
+          <strong>[2]</strong> Normativa general, artículo 12, página 5:
+          "Artículo 12. ..."</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Sociedad Universitaria - <a href="https://github.com/mcondoriuab/normativa-uab">Repositorio</a></p>
+  </footer>
+</body>
+</html>
