@@ -40,36 +40,36 @@ Abrir cada fragmento junto al PDF en la página indicada. Responder `sí`/`no`.
 
 | id | pág. | ¿artículo completo? | ¿página correcta? | ¿tiene basura? | ¿texto desordenado? | nota |
 |---|---|---|---|---|---|---|
-| `reglamento-de-graduacion-2016#art-8` | 4 |si|si|no |no| |
-| `reglamento-de-becas-2016#art-13` | 3 |si |si |no |no | Sigue en la pág. 4; el texto está entero |
-| `reglamento-de-interaccion-social-y-difusion-cultural-2016#art-19` | 4 |si |si |no |no | |
-| `reglamento-de-interaccion-social-y-difusion-cultural-2016#art-4` | 2|si |si | no|no | |
-| `reglamento-de-graduacion-2016#art-65` | 12 | si| si|no |no | |
-| `reglamento-de-graduacion-2016#art-22` | 6 | si|si |no |no | |
-| `reglamento-de-graduacion-2016#art-3` | 2 |si |si |no |no | Sigue en la pág. 3; el texto está entero |
-| `reglamento-estudiantil-2016#art-69` | 12 |si | si|no |no | |
-| `reglamento-de-becas-2016#art-45` | 7 |si |si |no |no | |
-| `reglamento-estudiantil-2016#art-6` | 2 |si |si |no |no | Sigue en la pág. 3; el texto está entero |
-| `reglamento-de-becas-2016#art-17` | 4 |si |si |no |no | |
-| `reglamento-de-becas-2016#art-16` | 4 |si|si |no |no | |
-| `reglamento-de-becas-2016#art-48` | 7 |si |si |no|no | |
-| `reglamento-de-graduacion-2016#art-62` | 11 |si |si |no |no | Sigue en la pág. 12; el texto está entero |
-| `reglamento-de-graduacion-2016#art-70` | 12 |si |si |no | no| |
-| `reglamento-estudiantil-2016#art-48` | 9 |si |si |no |no | |
-| `reglamento-de-becas-2016#art-14` | 4 | si|si |no |no | |
-| `reglamento-estudiantil-2016#art-77` | 14 |si |si |no |no | |
-| `reglamento-de-graduacion-2016#art-52` | 10 |si |si |no |no | |
-| `reglamento-estudiantil-2016#art-4` | 2 |si |si |no |no | |
-| `reglamento-de-graduacion-2016#art-63` | 12 | si|si |no |no | |
-| `reglamento-estudiantil-2016#art-19` | 4 |si |si |no |no | |
-| `reglamento-de-interaccion-social-y-difusion-cultural-2016#art-21` | 4 |si |si |no |no | |
-| `reglamento-de-becas-2016#art-4` | 2 |si |si |no |no | |
-| `reglamento-de-graduacion-2016#art-32` | 7 | si|si |no |no | |
-| `reglamento-de-investigacion-2021#art-21` | 9 |si |si |no |no | |
-| `reglamento-de-graduacion-2016#art-30` | 7 |si |si |no |no | |
-| `reglamento-de-graduacion-2016#art-61` | 11 |si |si |no |no | |
-| `reglamento-de-investigacion-2021#art-19` | 9 |si |si |no |no | |
-| `reglamento-de-investigacion-2021#art-41` | 12 |si |si |no |no | Sigue en la pág. 13; el texto está entero |
+| `reglamento-de-graduacion-2016#art-8` | 4 | sí | sí | no | no | |
+| `reglamento-de-becas-2016#art-13` | 3 | sí | sí | no | no | Sigue en la pág. 4; el texto está entero |
+| `reglamento-de-interaccion-social-y-difusion-cultural-2016#art-19` | 4 | sí | sí | no | no | |
+| `reglamento-de-interaccion-social-y-difusion-cultural-2016#art-4` | 2 | sí | sí | no | no | |
+| `reglamento-de-graduacion-2016#art-65` | 12 | sí | sí | no | no | |
+| `reglamento-de-graduacion-2016#art-22` | 6 | sí | sí | no | no | |
+| `reglamento-de-graduacion-2016#art-3` | 2 | sí | sí | no | no | Sigue en la pág. 3; el texto está entero |
+| `reglamento-estudiantil-2016#art-69` | 12 | sí | sí | no | no | |
+| `reglamento-de-becas-2016#art-45` | 7 | sí | sí | no | no | |
+| `reglamento-estudiantil-2016#art-6` | 2 | sí | sí | no | no | Sigue en la pág. 3; el texto está entero |
+| `reglamento-de-becas-2016#art-17` | 4 | sí | sí | no | no | |
+| `reglamento-de-becas-2016#art-16` | 4 | sí | sí | no | no | |
+| `reglamento-de-becas-2016#art-48` | 7 | sí | sí | no | no | |
+| `reglamento-de-graduacion-2016#art-62` | 11 | sí | sí | no | no | Sigue en la pág. 12; el texto está entero |
+| `reglamento-de-graduacion-2016#art-70` | 12 | sí | sí | no | no | |
+| `reglamento-estudiantil-2016#art-48` | 9 | sí | sí | no | no | |
+| `reglamento-de-becas-2016#art-14` | 4 | sí | sí | no | no | |
+| `reglamento-estudiantil-2016#art-77` | 14 | sí | sí | no | no | |
+| `reglamento-de-graduacion-2016#art-52` | 10 | sí | sí | no | no | |
+| `reglamento-estudiantil-2016#art-4` | 2 | sí | sí | no | no | |
+| `reglamento-de-graduacion-2016#art-63` | 12 | sí | sí | no | no | |
+| `reglamento-estudiantil-2016#art-19` | 4 | sí | sí | no | no | |
+| `reglamento-de-interaccion-social-y-difusion-cultural-2016#art-21` | 4 | sí | sí | no | no | |
+| `reglamento-de-becas-2016#art-4` | 2 | sí | sí | no | no | |
+| `reglamento-de-graduacion-2016#art-32` | 7 | sí | sí | no | no | |
+| `reglamento-de-investigacion-2021#art-21` | 9 | sí | sí | no | no | |
+| `reglamento-de-graduacion-2016#art-30` | 7 | sí | sí | no | no | |
+| `reglamento-de-graduacion-2016#art-61` | 11 | sí | sí | no | no | |
+| `reglamento-de-investigacion-2021#art-19` | 9 | sí | sí | no | no | |
+| `reglamento-de-investigacion-2021#art-41` | 12 | sí | sí | no | no | Sigue en la pág. 13; el texto está entero |
 
 ## Recuento
 

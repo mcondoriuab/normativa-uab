@@ -80,8 +80,15 @@ del PDF, empezando en 1).
 - No hay artículos "bis", ni numeración romana en artículos, ni `°`.
 - Títulos y capítulos usan numeración romana y a veces van sin tilde
   (`TITULO`, `CAPITULO`).
-- _(Pendiente de revisar a ojo abriendo cada PDF: tablas, notas al pie y texto
-  en dos columnas. Desde el texto extraído no se ve.)_
+- **Dos columnas** en los 4 reglamentos de 2016 (Becas, Graduación, Interacción
+  Social y Estudiantil): el texto empieza en dos posiciones horizontales,
+  x ≈ 40 y x ≈ 320 puntos, en una página de 612 de ancho. Por eso las líneas
+  son tan cortas. `pypdf` lee primero la columna izquierda y luego la derecha,
+  así que el orden sale bien (la revisión de 30 fragmentos no encontró texto
+  desordenado). Investigación 2021 va a una sola columna, con texto
+  justificado.
+- **Sin tablas ni notas al pie** en ninguno. La única imagen es la de la
+  portada de Investigación 2021 (página 1), que no lleva texto del reglamento.
 
 ### Todas las variantes de encabezado de artículo
 
@@ -100,6 +107,8 @@ número y no acepta `Art.`.
   regulares sobre el texto de cada página.
 - Total de encabezados encontrados al inicio de línea = total en cualquier
   posición (50, 72, 32, 57, 82): ningún encabezado aparece a mitad de línea.
+- Columnas e imágenes: posición horizontal de cada trozo de texto
+  (`extract_text(visitor_text=…)` de `pypdf`) y `page.images` de cada página.
 - Se usó IA (Claude) para hacer el recuento automático y redactar el primer
   borrador; los ejemplos se copiaron de la salida real del script. _(Falta
   comprobarlos abriendo los PDF.)_
@@ -117,5 +126,5 @@ número y no acepta `Art.`.
 
 ## Preguntas abiertas
 
-- ¿Hay tablas, notas al pie o texto en dos columnas? Comprobarlo abriendo los
-  PDF.
+- Si se añade un PDF a dos columnas donde `pypdf` mezcle las columnas, el
+  texto saldría desordenado. Habría que revisarlo en cada documento nuevo.
