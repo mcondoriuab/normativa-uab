@@ -18,6 +18,17 @@ Reglamento Docente, el del Personal Administrativo y el de Autoevaluación
 (misma página). La versión de 2016 del Reglamento de Investigación (Drive,
 `1MG9axfNtsly_TJraaLy318oY37yVibaT`) se sustituye por la de 2021.
 
+El equipo reunió en Drive las versiones Word de 2016
+(https://drive.google.com/drive/folders/19lMybgMXMKrss-P0ZQqa1P4drBBXGhQv),
+sin origen conocido. Comparadas palabra a palabra, Estudiantil, Graduación,
+Becas e Interacción Social tienen el mismo texto que los PDF de la tabla
+(solo cambian los pies de página). El Word del Estudiantil es la versión
+"corregida" de octubre de 2016, así que el PDF publicado ya incluye esas
+correcciones aunque la portada diga febrero. El Word de Investigación es la
+versión de 2016, ya sustituida por la de 2021. Los de Docente y Autoevaluación
+quedan fuera por lo dicho arriba. Por eso el corpus usa los PDF oficiales y no
+los PDF convertidos desde Word.
+
 ### Documentos no públicos
 
 Ninguno. El *Reglamento Institucional* aparece en la lista de
