@@ -6,8 +6,8 @@ services:
     runtime: python
     plan: free
     buildCommand: pip install -r requirements.txt
-    # Provisional: pasa a apps.api.main:app cuando se fusione BE-001
-    startCommand: uvicorn apps.api.hola:app --host 0.0.0.0 --port $PORT
+    # API real: apps/api/main.py (BE-001)
+    startCommand: uvicorn apps.api.main:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /salud
     envVars:
       - key: PYTHON_VERSION
