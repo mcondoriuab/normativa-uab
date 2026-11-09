@@ -105,3 +105,4 @@ Reglas de uso:
 | Fecha | Qué se desplegó | URL | Quién |
 |---|---|---|---|
 | 2026-11-09 | Hola mundo: `/salud` con `apps/api/hola.py` provisional (BE-006, PR #68) | <https://normativa-uab-ldxj.onrender.com> | Docente |
+| 2026-11-09 | Vista previa de `apps/web` como sitio estático, con URL propia por PR (PR #78) | <https://normativa-uab-web-ldxj.onrender.com> | Docente |
