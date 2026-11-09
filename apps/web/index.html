@@ -5,25 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Asistente de Normativa UAB</title>
   <link rel="stylesheet" href="estilos.css">
-  <script src="app.js" defer></script>
 </head>
 <body>
+
   <header>
     <h1>Asistente de Normativa UAB</h1>
     <p class="aviso-legal">Herramienta de apoyo. El texto oficial y vinculante es el publicado por la universidad.</p>
-    <p>Introduce tu duda sobre la normativa universitaria y recibirás una respuesta con citas.</p>
   </header>
 
   <main>
-    <form id="formulario">
-      <label for="pregunta">Tu pregunta:</label>
-      <textarea id="pregunta" name="pregunta" rows="3" placeholder="Escribe tu duda sobre la normativa..." required maxlength="500"></textarea>
-      <button type="submit">Preguntar</button>
-    </form>
 
-    <section id="respuesta">
+    <section class="form-section">
+      <h2>Formulario de Consulta</h2>
+      <form id="formulario">
+        <label for="pregunta">Tu pregunta:</label>
+        <textarea id="pregunta" name="pregunta" rows="3" placeholder="Escribe tu duda sobre la normativa..." required maxlength="500"></textarea>
+        <button type="submit">Preguntar</button>
+      </form>
+    </section>
+
+    <section class="respuesta-section">
       <h2>Respuesta</h2>
-      <p>Puedes faltar hasta un 20% de las clases [1].</p>
+      <p id="respuesta-texto">Puedes faltar hasta un 20% de las clases [1].</p>
       <h3>Citas</h3>
       <ol id="citas">
         <li>
@@ -35,10 +38,12 @@
           "Artículo 12. ..."</li>
       </ol>
     </section>
+
   </main>
 
   <footer>
-    <p>Sociedad Estudiantil de Investigación de Ingeniería de Sistemas (SE.ING - UAB) - <a href="https://github.com/mcondoriuab/normativa-uab">Repositorio</a></p>
+    <p>Sociedad Estudiantil - <a href="https://github.com/mcondoriuab/normativa-uab">Repositorio UAB</a></p>
   </footer>
+
 </body>
 </html>
