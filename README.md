@@ -52,7 +52,8 @@ cuando empiezan las fases que las usan.
 
 La web y la API se despliegan en **Render** y la base de datos vive en
 **Supabase**, ambos en plan gratuito y manejables desde Claude Code con sus
-conectores. URL pública: _(pendiente, tarea BE-006)_. Detalle en
+conectores. URL pública: <https://normativa-uab-ldxj.onrender.com> (hoy solo
+responde `/salud`). Detalle en
 [`docs/DESPLIEGUE.md`](docs/DESPLIEGUE.md).
 
 ## Documentación
