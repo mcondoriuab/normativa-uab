@@ -1,0 +1,14 @@
+# Infraestructura en Render (ADR-002, BE-006). Cada merge a main redespliega.
+# Sin secretos: los que hagan falta se declaran con sync: false (BE-007).
+services:
+  - type: web
+    name: normativa-uab
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    # Provisional: pasa a apps.api.main:app cuando se fusione BE-001
+    startCommand: uvicorn apps.api.hola:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /salud
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.11
