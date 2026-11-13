@@ -4,3 +4,4 @@ uvicorn[standard]
 groq
 python-dotenv
 pypdf
+psycopg[binary]

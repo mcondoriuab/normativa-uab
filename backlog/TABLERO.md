@@ -40,7 +40,7 @@ No cambian. Solo se les pone fecha límite.
 | [BE-002](tareas/BE-002.md) | `/preguntar` simulado y la web servida desde la API | BE | M | BE-001, FE-001 | 2026-11-09 | BE-005 | [#22](https://github.com/mcondoriuab/normativa-uab/issues/22) |
 | [IA-002](tareas/IA-002.md) | Ingesta: de los PDF a fragmentos revisados | IA | L | INV-004 | 2026-11-10 | INV-006, IA-003, IA-004, IA-005, IA-006 | [#26](https://github.com/mcondoriuab/normativa-uab/issues/26) |
 | [BE-006](tareas/BE-006.md) ⚙ | Primer despliegue en Render | BE | M | BE-001 | hecha | — | [#23](https://github.com/mcondoriuab/normativa-uab/issues/23) |
-| [BE-008](tareas/BE-008.md) ⚙ | Supabase: esquema, `ia/db.py` y mantener la base activa | BE | L | BE-006, BE-001 (Parte 2) | 2026-11-10 | BE-009 | [#31](https://github.com/mcondoriuab/normativa-uab/issues/31) |
+| [BE-008](tareas/BE-008.md) ⚙ | Supabase: esquema, `ia/db.py` y mantener la base activa | BE | L | BE-006, BE-001 (Parte 2) | hecha | BE-009 | [#31](https://github.com/mcondoriuab/normativa-uab/issues/31) |
 
 ## Semana 2: del 11 al 18 de noviembre
 
