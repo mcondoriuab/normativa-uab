@@ -1,6 +1,6 @@
 # IA-002: revisión manual de 30 fragmentos
 
-**Autor(es):** Sandra · **Revisor (5 de 30):** _(rellenar)_ · **Fecha:** 2026-11-09
+**Autor(es):** Sandra · **Revisor (5 de 30):** Miguel Ángel Condori (con ayuda de Claude), 2026-11-12 · **Fecha:** 2026-11-09
 
 ## Pregunta
 
@@ -84,6 +84,32 @@ En la primera pasada se marcaron como incompletos 5 artículos que empiezan en
 una página y terminan en la siguiente. Al compararlos de nuevo, el texto está
 entero: el contrato guarda en `pagina` solo la página donde **empieza** el
 artículo, así que cruzar de página no es un error.
+
+## Revisión de 5 de 30 (revisor)
+
+Se repitió la muestra con `random.seed(42)` (mismos 30 `id` y páginas) y se
+eligieron 5 de los casos más difíciles: artículos que cruzan de página, el más
+largo, texto a dos columnas y la plantilla de Investigación 2021. Cada
+fragmento se comparó con el PDF abierto directamente, no con la salida de
+`pypdf`.
+
+| id | pág. | ¿artículo completo? | ¿página correcta? | ¿tiene basura? | ¿texto desordenado? | nota |
+|---|---|---|---|---|---|---|
+| `reglamento-de-becas-2016#art-13` | 3 | sí | sí | no | no | Sigue en la pág. 4; se quitaron bien el pie y el `CAPITULO I` |
+| `reglamento-de-graduacion-2016#art-3` | 2 | sí | sí | no | no | El más largo: 3 columnas en 2 páginas, en el orden correcto |
+| `reglamento-de-interaccion-social-y-difusion-cultural-2016#art-19` | 4 | sí | sí | no | no | |
+| `reglamento-de-investigacion-2021#art-41` | 12 | sí | sí | no | no | Sigue en la pág. 13; quedan líneas en blanco donde estaba el pie |
+| `reglamento-estudiantil-2016#art-77` | 14 | sí | sí | no | no | |
+
+Los 5 coinciden con la revisión de arriba. Fuera de la muestra se vieron dos
+detalles menores que no bloquean:
+
+- `reglamento-estudiantil-2016` tiene un nivel más, `SECCIÓN I`/`SECCIÓN II`,
+  que el patrón de `TÍTULO`/`CAPÍTULO` no quita: queda pegado al final de
+  `#art-32`, `#art-73` y `#art-76`.
+- Cuatro encabezados se escriben `Articulo`, sin tilde (Interacción Social
+  art. 26; Investigación arts. 42, 43 y 49). El patrón los detecta, pero no
+  están en la lista de variantes de `IA-002-estructura-pdf.md`.
 
 ## Conclusión para el proyecto
 
