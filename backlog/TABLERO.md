@@ -25,7 +25,7 @@ No cambian. Solo se les pone fecha límite.
 | [SET-004](tareas/SET-004.md) | Guía de git para el equipo | SET | hecha | [#4](https://github.com/mcondoriuab/normativa-uab/issues/4) |
 | [INV-001](tareas/INV-001.md) | Qué es un LLM, un token y por qué alucina | INV | hecha | [#5](https://github.com/mcondoriuab/normativa-uab/issues/5) |
 | [BE-001](tareas/BE-001.md) | API mínima con `/salud` | BE | hecha | [#21](https://github.com/mcondoriuab/normativa-uab/issues/21) |
-| [INV-003](tareas/INV-003.md) | Elegir licencia del proyecto | INV | 2026-11-07 | [#6](https://github.com/mcondoriuab/normativa-uab/issues/6) |
+| [INV-003](tareas/INV-003.md) | Elegir licencia del proyecto | INV | hecha | [#6](https://github.com/mcondoriuab/normativa-uab/issues/6) |
 | [INV-012](tareas/INV-012.md) | Experimento: cazar alucinaciones en chatbots | INV | 2026-11-07 | [#7](https://github.com/mcondoriuab/normativa-uab/issues/7) |
 | [INV-013](tareas/INV-013.md) | RAG a mano: con y sin los artículos | INV | 2026-11-07 | [#8](https://github.com/mcondoriuab/normativa-uab/issues/8) |
 | [INV-015](tareas/INV-015.md) | Mapa de actores y fuentes de la normativa | INV | 2026-11-07 | [#10](https://github.com/mcondoriuab/normativa-uab/issues/10) |
