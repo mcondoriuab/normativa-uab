@@ -7,11 +7,11 @@ está al día, las citas apuntan a normativa derogada — que es peor que no cit
 
 | Documento (nombre de archivo) | Carrera | Versión / año | Vigente desde | Origen (URL o persona) | ¿Público? | Tiene texto extraíble |
 |---|---|---|---|---|---|---|
-| reglamento-estudiantil-2016.pdf | General | 2016 | febrero 2016 | https://drive.google.com/file/d/1k6uMRlLGA8hLTub1rJZpKoWhwhlfNKlI/view (enlazado en https://paginanueva.uab.edu.bo/reglamentos-uab/) | sí | |
-| reglamento-de-graduacion-2016.pdf | General | 2016 | febrero 2016 | https://drive.google.com/file/d/1icpU6V0iTDmAC9ANxSKcpNbuG0cFzaTH/view (enlazado en https://paginanueva.uab.edu.bo/reglamentos-uab/) | sí | |
-| reglamento-de-becas-2016.pdf | General | 2016 | febrero 2016 | https://drive.google.com/file/d/190sR7nWnbP78TD1aWV1tkuRkRm8mhnGd/view (enlazado en https://paginanueva.uab.edu.bo/reglamentos-uab/) | sí | |
-| reglamento-de-investigacion-2021.pdf | General | 2021 (vigencia dudosa: la portada dice 2021 y el cierre, 2016) | — | https://www.uab.edu.bo/assets/pdf/REGLAMENTO-DE-INVESTIGACION%202016.pdf | sí | |
-| reglamento-de-interaccion-social-y-difusion-cultural-2016.pdf | General | 2016 | febrero 2016 | https://drive.google.com/file/d/1o_xpo1Vx84V4cRr-kX_cww-3G_ycFFbO/view (enlazado en https://paginanueva.uab.edu.bo/reglamentos-uab/) | sí | |
+| reglamento-estudiantil-2016.pdf | General | 2016 | febrero 2016 | https://drive.google.com/file/d/1k6uMRlLGA8hLTub1rJZpKoWhwhlfNKlI/view (enlazado en https://paginanueva.uab.edu.bo/reglamentos-uab/) | sí | sí |
+| reglamento-de-graduacion-2016.pdf | General | 2016 | febrero 2016 | https://drive.google.com/file/d/1icpU6V0iTDmAC9ANxSKcpNbuG0cFzaTH/view (enlazado en https://paginanueva.uab.edu.bo/reglamentos-uab/) | sí | sí |
+| reglamento-de-becas-2016.pdf | General | 2016 | febrero 2016 | https://drive.google.com/file/d/190sR7nWnbP78TD1aWV1tkuRkRm8mhnGd/view (enlazado en https://paginanueva.uab.edu.bo/reglamentos-uab/) | sí | sí |
+| reglamento-de-investigacion-2021.pdf | General | 2021 (vigencia dudosa: la portada dice 2021 y el cierre, 2016) | — | https://www.uab.edu.bo/assets/pdf/REGLAMENTO-DE-INVESTIGACION%202016.pdf | sí | sí |
+| reglamento-de-interaccion-social-y-difusion-cultural-2016.pdf | General | 2016 | febrero 2016 | https://drive.google.com/file/d/1o_xpo1Vx84V4cRr-kX_cww-3G_ycFFbO/view (enlazado en https://paginanueva.uab.edu.bo/reglamentos-uab/) | sí | sí |
 
 Quedan fuera, aunque son públicos, porque no regulan al estudiante: el
 Reglamento Docente, el del Personal Administrativo y el de Autoevaluación
@@ -60,9 +60,13 @@ ingesta y el índice.
 
 Revisar después de cada ingesta y anotar aquí:
 
-- Documentos sin texto extraíble (escaneados, necesitan OCR): _(rellenar)_
-- Documentos donde la detección de artículos falla: _(rellenar)_
-- Fragmentos totales / con artículo identificado: _(rellenar)_
+- Documentos sin texto extraíble (escaneados, necesitan OCR): ninguno (ingesta del 2026-11-09).
+- Documentos donde la detección de artículos falla: ninguno. Interacción Social
+  escribe `Artículos 23.-` (errata en plural) y el patrón lo acepta. Detalle en
+  `investigacion/IA-002-estructura-pdf.md`.
+- Fragmentos totales / con artículo identificado: 293 / 293 (Becas 50,
+  Graduación 72, Interacción Social 32, Investigación 57, Estudiantil 82).
+- Revisión manual de 30 fragmentos: `investigacion/IA-002-revision-fragmentos.md`.
 
 ## Actualización
 
