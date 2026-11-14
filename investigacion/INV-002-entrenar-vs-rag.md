@@ -34,7 +34,7 @@ exacto**?
 
 | Criterio | Fine-tuning | Prompt largo | RAG |
 |---|---|---|---|
-| **Coste** | Alto al principio: hay que preparar cientos de ejemplos y pagar o tener GPU para entrenar. Luego cada pregunta es barata | Sin preparación, pero **muy caro por pregunta**: unos 131.000 tokens de entrada cada vez (ver cálculo). En el plan gratuito de Groq no cabe ni un reglamento por minuto | Coste medio al principio (trocear e indexar, una vez) y **barato por pregunta**: unos 800 tokens de normativa por pregunta |
+| **Coste** | Alto al principio: hay que preparar cientos de ejemplos y pagar o tener GPU para entrenar. Luego cada pregunta es barata | Sin preparación, pero **muy caro por pregunta**: unos 131.000 tokens de entrada cada vez (ver cálculo). En el plan gratuito de Groq no cabe ni un reglamento por minuto | Coste medio al principio (trocear e indexar, una vez) y **barato por pregunta**: entre 800 y 3.800 tokens de normativa por pregunta |
 | **Cuando cambia la normativa** | Hay que volver a generar ejemplos y **reentrenar**. Mientras tanto, el modelo responde con la versión vieja | Basta con cambiar el texto que se pega. Fácil | Basta con **volver a indexar** el reglamento cambiado. Fácil |
 | **¿Puede citar el artículo exacto?** | **No de forma fiable.** El modelo no sabe de dónde viene lo que "sabe"; puede inventar el número de artículo | Sí, en teoría, porque el texto está en el prompt. Pero con mucho texto el modelo elige peor qué citar (PoliChat, Parte 1) | **Sí.** Cada fragmento lleva documento, artículo y página (contrato *Fragmento* de `docs/ARQUITECTURA.md`) y la cita se puede comprobar |
 | **Riesgo de alucinar** | **Alto.** En Unipa-GPT el modelo ajustado "generate loops and hallucinations" y no mejoró (Parte 1) | Medio: tiene la información, pero se "pierde" entre mucho texto irrelevante | **Medio-bajo**, pero **no cero**: herramientas legales con RAG alucinan entre el 17 % y el 33 % (Stanford, Parte 1). Se reduce con cita obligatoria y rechazo |
@@ -62,8 +62,22 @@ Comparación con dos modelos actuales (consultados el 2026-11-12):
 
 | Modelo | Ventana de contexto | ¿Caben 131.434 tokens? | Fuente |
 |---|---:|---|---|
-| `openai/gpt-oss-120b` en Groq (el elegido en ADR-009) | 131.072 tokens | **No**: se pasa en unos 360 tokens (100,3 % de la ventana), y aún faltaría sitio para la pregunta y la respuesta | [Groq, ficha del modelo](https://console.groq.com/docs/model/openai/gpt-oss-120b) |
+| `openai/gpt-oss-120b` en Groq (el elegido en ADR-009) | 131.072 tokens | **Justo en el límite**: el 100,3 % de la ventana (99,3 % con el recuento medido, ver abajo). No queda sitio para las instrucciones, la pregunta y la respuesta | [Groq, ficha del modelo](https://console.groq.com/docs/model/openai/gpt-oss-120b) |
 | `gemini-3.8-flash` (Google) | 1.048.576 tokens | **Sí**: ocupa el 12,5 % de la ventana | [Google AI, ficha del modelo](https://aistudio.google.com/docs/models/gemini-3.8-flash) |
+
+Comprobación con el tokenizador real (`o200k_base`, la base del tokenizador de
+`gpt-oss`), hecha por el docente el 2026-11-13:
+
+| | Caracteres | Tokens medidos | Caracteres por token |
+|---|---:|---:|---:|
+| Reglamento Estudiantil | 55.991 | 13.020 | 4,30 |
+| Los 5 reglamentos | 172.602 | 40.501 | 4,26 |
+
+Con el dato medido, 10 reglamentos como el Estudiantil son 130.200 tokens (el
+99,3 % de la ventana de `gpt-oss-120b`). Como el resultado queda a un 1 % del
+límite, la ventana no basta para descartar el prompt largo: el argumento
+decisivo es el límite por minuto. La proporción de INV-001 (4,26) coincide con
+la del corpus completo.
 
 Que quepa no significa que convenga:
 
@@ -80,8 +94,10 @@ Que quepa no significa que convenga:
   descartó por privacidad.
 - **Comparación con RAG** (estimación nuestra): el Reglamento Estudiantil tiene
   82 artículos, unos 683 caracteres por artículo, o sea unos 160 tokens.
-  Cinco artículos son unos **800 tokens**: más de **160 veces menos** que el
-  prompt largo.
+  Cinco artículos son unos **800 tokens**. Medido con el tokenizador, la media
+  es de 168 tokens por artículo, pero hay artículos de hasta 941 y los 5 más
+  largos suman 3.777. Con 5 artículos son **entre 800 y 3.800 tokens**: entre
+  **35 y 160 veces menos** que el prompt largo.
 
 Nota: hoy el corpus tiene 5 reglamentos y no 10 (172.602 caracteres, unos
 40.517 tokens). La tarea pide el cálculo con 10 documentos porque el corpus
@@ -89,17 +105,15 @@ crecerá; con 5 ya superamos cinco veces el límite por minuto de Groq.
 
 ### Evidencia propia: INV-012 e INV-013
 
-> **Pendiente de completar** cuando se integren los informes
-> `investigacion/INV-012-alucinaciones.md` e `investigacion/INV-013-rag-a-mano.md`.
-> No se rellena con datos supuestos: hay que copiar aquí sus resultados reales.
-
-- **INV-012 (alucinaciones):** _cuántas preguntas sobre la normativa de la UAB
-  se hicieron a chatbots sin documentos, y cuántas respuestas inventaron
-  artículos, plazos o cifras._ Esto mide el riesgo de confiar en lo que el
-  modelo "sabe" (lo más parecido a un fine-tuning sin datos nuestros).
-- **INV-013 (RAG a mano):** _cuántas respuestas fueron correctas y con cita
-  **sin** pasarle los artículos al modelo y cuántas **con** los artículos._ Es
-  nuestra prueba directa de lo que aporta RAG.
+- **INV-013 (RAG a mano)**, en
+  [`INV-013-rag-a-mano.md`](INV-013-rag-a-mano.md): 3 preguntas sobre el
+  Reglamento de Becas y 1 cuya respuesta no está. **Sin** los artículos,
+  ChatGPT acertó 0 de 3: respondió con el reglamento de otra universidad y, en
+  la pregunta sin respuesta, no dijo "no lo sé". **Con** 5 artículos pegados
+  acertó 3 de 3, citó bien las 3 y dijo "No lo encuentro en la normativa" en la
+  pregunta sin respuesta. Es nuestra prueba directa de lo que aporta RAG.
+- **INV-012 (alucinaciones):** pendiente. Sus resultados se añadirán en el
+  informe final (INV-011). No cambian la decisión.
 
 ## Evidencia
 
@@ -112,9 +126,11 @@ crecerá; con 5 ya superamos cinco veces el límite por minuto de Groq.
   (consultado 2026-11-12): "CONTEXT WINDOW 131,072" y "MAX OUTPUT TOKENS 65,536".
 - [Groq, límites](https://console.groq.com/docs/rate-limits) (consultado
   2026-11-12): fila de `openai/gpt-oss-120b` con 30 RPM, 1K RPD, 8K TPM, 200K
-  TPD. La página tiene pestañas de plan *Free* y *Developer* y la extracción no
-  dejó claro a cuál pertenece la tabla; coincide con lo que anotó ADR-009 para
-  el plan gratuito.
+  TPD. Es la pestaña *Free*, la que la página muestra por defecto; en
+  *Developer* la misma fila dice 1K RPM, 500K RPD y 250K TPM (comprobado por el
+  docente el 2026-11-13).
+- Recuento de tokens: `tiktoken` con la codificación `o200k_base` sobre los
+  `.md` del corpus y sobre los fragmentos de `data/fragmentos.json` (IA-002).
 - [Google AI, ficha de `gemini-3.8-flash`](https://aistudio.google.com/docs/models/gemini-3.8-flash)
   (consultado 2026-11-12): "Input token limit 1,048,576", "Output token limit
   65,536".
@@ -137,9 +153,10 @@ Lo que **concluimos nosotros**:
 - **RAG** es el único de los tres que cumple a la vez lo que pide
   `docs/VISION.md`: citar el artículo exacto, actualizarse sin reentrenar,
   funcionar dentro del plan gratuito y que el equipo pueda entender cada pieza.
-- El **prompt largo** no es viable con el proveedor elegido (no cabe en la
-  ventana y supera el límite por minuto), y con otro proveedor costaría unas 160
-  veces más por pregunta.
+- El **prompt largo** no es viable con el proveedor elegido (un solo
+  reglamento supera el límite por minuto, y diez llenan la ventana sin dejar
+  sitio para la pregunta), y con otro proveedor costaría entre 35 y 160 veces
+  más por pregunta.
 - El **fine-tuning** no permite citar con fiabilidad, obliga a reentrenar con
   cada cambio y, en los proyectos que lo probaron, no mejoró los resultados.
 - RAG **no** elimina las alucinaciones: por eso mantenemos la cita obligatoria,
@@ -150,9 +167,6 @@ Decisión registrada en
 
 ## Preguntas abiertas
 
-- ¿La proporción de 4,26 caracteres por token vale también para el tokenizador
-  de `gpt-oss-120b`? Se midió con un fragmento de 145 caracteres; con todo el
-  reglamento podría variar.
 - ¿Cuántos fragmentos (k) conviene pasar al modelo? Elegimos unos 5 por la
   Parte 1, pero hay que medirlo con el golden set.
 - Si algún día hiciera falta, ¿tendría sentido un fine-tuning pequeño solo para

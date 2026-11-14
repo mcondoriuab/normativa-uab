@@ -4,7 +4,7 @@
 
 > Este informe es la **Parte 1** de INV-002 (estado del arte). La Parte 2
 > (fine-tuning frente a prompt largo frente a RAG, y el ADR-007) va en
-> `INV-002-entrenar-vs-rag.md` y espera a INV-012 e INV-013.
+> `INV-002-entrenar-vs-rag.md`.
 
 ## Pregunta
 
@@ -159,8 +159,8 @@ Esto es lo que **concluimos nosotros** a partir de las fuentes.
    tuvieron que acompañar de búsqueda en documentos, y en Unipa-GPT no mejoró
    nada y además costó tokens. Ninguno de los tres proyectos universitarios lo
    necesitó. Para nosotros es un indicio fuerte a favor de RAG, que la Parte 2
-   de esta tarea tiene que confirmar con nuestros propios experimentos
-   (INV-012, INV-013) y registrar en el ADR-007.
+   de esta tarea confirma con nuestro propio experimento (INV-013) y registra
+   en el ADR-007.
 
 ## Preguntas abiertas
 

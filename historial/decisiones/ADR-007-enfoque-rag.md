@@ -1,10 +1,6 @@
 # ADR-007: Usar RAG, y no fine-tuning ni prompt largo, para darle la normativa al LLM
 
-**Estado:** propuesta · **Fecha:** 2026-11-12 · **Tarea:** INV-002
-
-> Pasa a `aceptada` cuando se añadan a `investigacion/INV-002-entrenar-vs-rag.md`
-> los resultados de INV-012 e INV-013 y confirmen la decisión. Si no la
-> confirman, se avisa al docente antes de cerrar INV-002.
+**Estado:** aceptada · **Fecha:** 2026-11-13 · **Tarea:** INV-002
 
 ## Contexto
 
@@ -30,10 +26,12 @@ la normativa en el prompt.
 1. **Cita verificable.** Cada fragmento lleva documento, artículo y página, así
    que la respuesta se puede comprobar contra el texto original. Con
    fine-tuning el modelo no sabe de dónde viene lo que responde.
-2. **Cabe en lo que tenemos.** Diez reglamentos como el Estudiantil son unos
-   131.434 tokens: no caben en la ventana de 131.072 de `gpt-oss-120b` y superan
-   de sobra el límite de 8.000 tokens por minuto del plan gratuito. Con RAG cada
-   pregunta lleva unos 800 tokens de normativa.
+2. **Cabe en lo que tenemos.** El plan gratuito de Groq permite 8.000 tokens
+   por minuto, y un solo reglamento como el Estudiantil ya tiene unos 13.000:
+   con prompt largo no se podría responder ni una pregunta por minuto. Diez
+   reglamentos (unos 130.000 tokens) llenarían además la ventana de 131.072 de
+   `gpt-oss-120b` sin dejar sitio para la pregunta y la respuesta. Con RAG cada
+   pregunta lleva entre 800 y 3.800 tokens de normativa.
 3. **Actualizar es barato.** Si cambia un reglamento, se vuelve a indexar; no
    hay que reentrenar nada.
 4. **Lo hacen así los demás.** Los 5 sistemas revisados en
@@ -42,6 +40,10 @@ la normativa en el prompt.
    Unipa-GPT no mejoró.
 5. **El equipo lo puede explicar.** Cada pieza (ingesta, BM25, búsqueda
    vectorial, prompt) es pequeña y ya tiene su tarea.
+6. **Lo comprobamos a mano.** En INV-013, ChatGPT sin los artículos acertó 0 de
+   3 preguntas (respondió con el reglamento de otra universidad). Con 5
+   artículos pegados acertó 3 de 3, citó bien y dijo "No lo encuentro en la
+   normativa" cuando la respuesta no estaba.
 
 Detalle y cálculo en `investigacion/INV-002-entrenar-vs-rag.md`.
 
@@ -50,7 +52,7 @@ Detalle y cálculo en `investigacion/INV-002-entrenar-vs-rag.md`.
 | Alternativa | Por qué no |
 |---|---|
 | **Fine-tuning** | No permite citar el artículo de forma fiable, hay que reentrenar con cada cambio de la normativa, necesita datos de entrenamiento y GPU que no tenemos, y en Unipa-GPT no mejoró y produjo alucinaciones |
-| **Prompt largo** (toda la normativa en cada pregunta) | Con 10 documentos (unos 131.434 tokens) no cabe en la ventana de `gpt-oss-120b` y supera el límite por minuto de Groq gratuito. En un modelo con ventana mayor (Gemini 3.8 Flash) costaría unos 0,10 USD por pregunta, y su plan gratuito usa los datos para mejorar sus productos (descartado en ADR-009). Además, con mucho texto el modelo cita peor |
+| **Prompt largo** (toda la normativa en cada pregunta) | Un solo reglamento supera el límite de 8.000 tokens por minuto de Groq gratuito, y 10 documentos (unos 130.000 tokens) llenan la ventana de `gpt-oss-120b`. En un modelo con ventana mayor (Gemini 3.8 Flash) costaría unos 0,10 USD por pregunta, y su plan gratuito usa los datos para mejorar sus productos (descartado en ADR-009). Además, con mucho texto el modelo cita peor |
 
 ## Consecuencias
 
@@ -64,6 +66,9 @@ Detalle y cálculo en `investigacion/INV-002-entrenar-vs-rag.md`.
 - **Riesgo que sigue:** RAG no elimina las alucinaciones (17-33 % en
   herramientas legales comerciales, según Stanford). Mantenemos la regla "cero
   respuestas sin cita" y el campo `rechazada`.
+- **Evidencia pendiente:** los resultados de INV-012 (alucinaciones sin
+  documentos) se añadirán en el informe final (INV-011). No cambian la
+  decisión.
 - **Señal para revisar la decisión:** si con el golden set el artículo correcto
   no aparece en el top-5 en la mayoría de las preguntas aun mejorando la
   búsqueda, o si cambiamos a un proveedor con ventana muy grande, coste bajo y
