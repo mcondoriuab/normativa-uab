@@ -3,7 +3,7 @@
 ## Cómo se recogieron
 
 Formulario anónimo del 4 de noviembre al 7 de noviembre de 2026, difundido en los grupos de WhatsApp de la carrera de Ingeniería de Sistemas y en el grupo general de la UAB.
-Respuestas recibidas: 26. Preguntas de secretaría: 6. Hay 6 preguntas marcadas como `(equipo)` entre las 37 preguntas listadas. Las cifras de origen no cuadran con el total si se cuentan como grupos separados; hay que contrastarlas con los registros originales antes de cerrar la tarea.
+Respuestas recibidas: 26. Preguntas de secretaría: 6. Del equipo: 6, marcadas con `(equipo)`. Las tres cifras suman 38 y la lista tiene 37: no se pudieron contrastar con las respuestas del formulario.
 El formulario no pedía nombre, correo ni carnet, y se desactivó la recogida de correos electrónicos.
 Antes de publicar cada pregunta se quitaron nombres, carnets y cualquier dato que permitiera reconocer a alguien.
 
