@@ -248,14 +248,14 @@ repetición solo dice la frase de rechazo.
 
 Sí / No / Parcial. "Cita correcta" solo aplica con contexto: el [n] que pone
 debe ser el fragmento que de verdad dice eso. "Rechaza cuando debe" solo aplica
-a P4.
+a P4, que es la única pregunta sin respuesta en el reglamento.
 
-| Pregunta | Sin contexto: correcta | Con contexto: correcta | Con contexto: cita correcta | Rechaza cuando debe |
+| Pregunta | Sin contexto: correcta | Con contexto: correcta | Con contexto: cita correcta | Con contexto: rechaza cuando debe |
 |---|---|---|---|---|
 | P1 | No: no da el dato y pregunta si es la UMSS | Sí: 50 % | Sí: [5] | — |
 | P2 | No: dice que **sí** cubre el verano (habla de la UCB) | Sí: no cubre | Sí: [2] | — |
 | P3 | No: dice "no", pero citando el Art. 38 de la UCB | Sí: intransferibles | Sí: [3] | — |
-| P4 | — | — | Sí: [3] solo para lo de "en forma personal", que es cierto | Sin contexto: **No**, contesta sobre la UCB · Con contexto: **Sí** |
+| P4 | No: en vez de rechazar, contesta sobre la UCB | Sí: dice "No lo encuentro en la normativa" | Sí: [3] solo para lo de "en forma personal", que es cierto | Sí |
 
 Sin contexto acierta 0 de 3 y no rechaza P4. Con contexto acierta 3 de 3, cita
 bien las 3 y rechaza P4.
@@ -270,8 +270,8 @@ Conversación nueva, mensaje sin la última frase y solo la pregunta P4.
 No lo encuentro en la normativa.
 ```
 
-¿Qué cambió? Nada: tampoco se inventó una fecha. Con "Responde solo con los
-fragmentos" le bastó para no inventar. Pero **ojo**: usó exactamente nuestra
+¿Qué cambió? Nada: tampoco se inventó una fecha. Le bastó con "Responde solo
+con los fragmentos" para no inventar. Pero **ojo**: usó exactamente nuestra
 frase "No lo encuentro en la normativa", que en este mensaje no aparece.
 Comprobamos que fue una conversación nueva y sin sesión iniciada (sin memoria),
 así que la coincidencia es curiosa pero no se explica por la conversación. Con
