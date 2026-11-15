@@ -7,6 +7,7 @@ editan** una vez aplicados. Para cambiar algo, se escribe una migración nueva.
 | Migración | Qué hace | Tarea | Aplicada en Supabase |
 |---|---|---|---|
 | `001_inicial.sql` | Extensión `vector`, tablas `fragmentos` y `consultas` | BE-008 | 2026-11-12 |
+| `002_embeddings.sql` | Columna `embedding vector(1024)` en `fragmentos` (ADR-008) | IA-008 | 2026-11-15 |
 
 Cómo aplicar una migración: Supabase → *SQL Editor* → pegar el archivo →
 *Run*. Anotar la fecha en la tabla.

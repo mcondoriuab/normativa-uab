@@ -40,6 +40,37 @@ def guardar_fragmentos(fragmentos: list[dict]) -> None:
             cursor.executemany(sql, fragmentos)
 
 
+def vector_a_texto(vector: list[float]) -> str:
+    """Convierte [0.1, 0.2] en '[0.1,0.2]', el formato de texto de pgvector."""
+    numeros = []
+    for numero in vector:
+        numeros.append(str(numero))
+    return "[" + ",".join(numeros) + "]"
+
+
+def guardar_embeddings(fragmentos: list[dict], embeddings: list[list[float]]) -> None:
+    """Guarda cada fragmento con su embedding; si el id ya existe, lo actualiza."""
+    sql = """
+        insert into fragmentos (id, documento, articulo, pagina, texto, embedding)
+        values (%(id)s, %(documento)s, %(articulo)s, %(pagina)s, %(texto)s,
+                %(embedding)s::vector)
+        on conflict (id) do update set
+            documento = excluded.documento,
+            articulo = excluded.articulo,
+            pagina = excluded.pagina,
+            texto = excluded.texto,
+            embedding = excluded.embedding
+    """
+    filas = []
+    for fragmento, embedding in zip(fragmentos, embeddings):
+        fila = dict(fragmento)
+        fila["embedding"] = vector_a_texto(embedding)
+        filas.append(fila)
+    with conectar() as conexion:
+        with conexion.cursor() as cursor:
+            cursor.executemany(sql, filas)
+
+
 def leer_fragmentos() -> list[dict]:
     """Devuelve todos los fragmentos con las claves del contrato Fragmento."""
     with conectar() as conexion:
