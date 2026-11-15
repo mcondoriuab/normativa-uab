@@ -104,7 +104,8 @@ lista ordenada de mejor a peor:
 
 ### API
 
-`GET /salud` → `{"estado": "ok"}`
+`GET /salud` → `{"estado": "ok", "base_de_datos": "ok"}`; si la base no
+responde, HTTP 503 con `{"estado": "error", "base_de_datos": "error"}` (BE-008)
 
 `POST /preguntar`
 

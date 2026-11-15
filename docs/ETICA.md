@@ -40,7 +40,10 @@ diseña asumiendo que alguien va a actuar según lo que diga.
 ## Autoría
 
 El trabajo es de los estudiantes que lo construyen y va firmado por ellos.
-Licencia y condiciones de uso: _(se decide en la tarea INV-003 y se anota aquí)_.
+Licencia: el código, **MIT** (`LICENSE`); la documentación y los datos propios,
+**[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es)**. Los PDF y
+los textos de `corpus/` son de la universidad y quedan fuera de ambas. Detalle
+en `historial/decisiones/ADR-006-licencia.md`.
 
 ## Uso de IA en el propio desarrollo
 
