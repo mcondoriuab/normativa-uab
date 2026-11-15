@@ -275,13 +275,20 @@ con los fragmentos" para no inventar. Pero **ojo**: usó exactamente nuestra
 frase "No lo encuentro en la normativa", que en este mensaje no aparece.
 Comprobamos que fue una conversación nueva y sin sesión iniciada (sin memoria),
 así que la coincidencia es curiosa pero no se explica por la conversación. Con
-una sola prueba no podemos concluir que la instrucción de rechazo sobre.
+una sola prueba no podemos concluir que la instrucción de rechazo sobre. En la
+repetición del revisor (siguiente apartado) no usó nuestra frase, pero tampoco
+inventó una fecha.
 
 ### Verificación por otro integrante
 
-Pendiente: la hará quien revise el pull request. Debe abrir ChatGPT en una
-conversación nueva, pegar el mensaje exacto con las 4 preguntas y comparar su
-respuesta a P1 con la nuestra (50 % [5]). El resultado se anotará en el PR.
+La hizo el revisor del pull request el 2026-11-13, en ChatGPT, en un chat
+temporal sin personalizar:
+
+- **Mensaje exacto con las 4 preguntas:** el mismo resultado que el nuestro:
+  P1 50 % [5], P2 [2], P3 [3] y en P4 "No lo encuentro en la normativa".
+- **Sin la frase de rechazo, solo P4:** no salió nuestra frase. Contestó con
+  otras palabras ("Los fragmentos proporcionados no establecen una fecha
+  límite…") y citó [3]. Tampoco inventó una fecha.
 
 ### Uso de IA
 
@@ -292,8 +299,9 @@ contra el PDF original (páginas 2 y 5): coincide palabra por palabra. También
 buscamos en todo el PDF "plazo", "fecha" y "límite" para confirmar que P4 no
 tiene respuesta: el reglamento solo remite a "los plazos ... establecidos en la
 convocatoria respectiva" (Art. 6.2), sin dar ninguna fecha. Las respuestas del
-chatbot las obtuvimos nosotros a mano y están copiadas sin editar. Claude también rellenó la tabla comparativa a
-partir de esas respuestas; la revisamos comparándola con el reglamento.
+chatbot las obtuvimos nosotros a mano y están copiadas sin editar. Claude
+también rellenó la tabla comparativa a partir de esas respuestas; la revisamos
+comparándola con el reglamento.
 
 ## Conclusión para el proyecto
 
