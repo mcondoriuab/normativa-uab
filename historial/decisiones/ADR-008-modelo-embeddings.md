@@ -1,6 +1,6 @@
 # ADR-008: modelo de embeddings
 
-**Estado:** propuesta · **Fecha:** 2026-11-15 · **Tarea:** INV-009
+**Estado:** aceptada · **Fecha:** 2026-11-15 · **Tarea:** INV-009
 
 ## Contexto
 
