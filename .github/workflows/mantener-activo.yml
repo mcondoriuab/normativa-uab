@@ -1,0 +1,17 @@
+# Supabase gratis pausa la base tras 7 días sin uso. Consultar /salud cada
+# 3 días hace un "select 1" en la base y la mantiene activa (BE-008).
+name: Mantener activa la base
+
+on:
+  schedule:
+    - cron: "0 12 */3 * *"
+  workflow_dispatch:
+
+jobs:
+  salud:
+    runs-on: ubuntu-latest
+    steps:
+      # 120 s porque Render gratis duerme y tarda ~1 min en despertar.
+      - run: curl --fail --max-time 120 "$URL_PUBLICA/salud"
+        env:
+          URL_PUBLICA: ${{ vars.URL_PUBLICA }}

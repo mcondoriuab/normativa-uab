@@ -12,3 +12,18 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: 3.12.11
+
+  # Vista previa de la web (apps/web) mientras BE-002 no la sirva desde la API.
+  # Cuando la web llame a /preguntar (FE-003), la app de verdad es la URL de la
+  # API y este sitio se retira.
+  - type: web
+    name: normativa-uab-web
+    runtime: static
+    buildCommand: echo "Sin build, se publica apps/web tal cual"
+    staticPublishPath: ./apps/web
+    # Cada PR que toque apps/web tiene su propia URL de vista previa (gratis).
+    previews:
+      generation: automatic
+    buildFilter:
+      paths:
+        - apps/web/**
