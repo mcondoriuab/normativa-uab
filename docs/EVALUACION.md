@@ -30,8 +30,24 @@ invente.
 
 ## Cómo se ejecuta
 
-El script de métricas se construye en la tarea IA-012 (`eval/recall.py`). Cada
-corrida se registra en `historial/evaluaciones/` con su fecha y qué se cambió.
+Desde la raíz del repositorio, con las dependencias instaladas y
+`DATABASE_URL` y `EMBEDDINGS_API_KEY` configuradas en el entorno:
+
+```bash
+python -m eval.recall
+python -m eval.recall --fallos
+```
+
+El script `eval/recall.py` compara los tres modos y muestra los aciertos, el
+total y el porcentaje global y por tipo. `--fallos` añade cada pregunta
+fallada, su id esperado y los ids recuperados. Cada corrida se registra en
+`historial/evaluaciones/` con su fecha y qué se cambió.
+
+Solo cuentan las preguntas con `en_corpus: true`. En el golden set actual son
+15: 5 literales, 7 coloquiales y 3 de varios artículos. Las otras 5 preguntas
+no cuentan en los denominadores ni se envían a la búsqueda en esta medición.
+Para `multi-articulo` se comprueba el artículo principal de `id_esperado`;
+acertarlo no garantiza recuperar todos los artículos necesarios para responder.
 
 ## Métricas
 
@@ -55,13 +71,28 @@ El resultado más presentable del proyecto. Mismo golden set, tres modos:
 
 | modo | recall@5 | fecha |
 |---|---|---|
-| bm25 | _(pendiente)_ | |
-| vectorial | _(pendiente)_ | |
-| híbrido | _(pendiente)_ | |
+| bm25 | 11/15 (73.3%) | 2026-11-16 |
+| vectorial | 13/15 (86.7%) | 2026-11-16 |
+| híbrido | 13/15 (86.7%) | 2026-11-16 |
 
 La hipótesis es que el híbrido gana, y que BM25 gana al vectorial en las
 preguntas `literal` mientras pierde en las `coloquial`. Si los datos dicen otra
 cosa, **se escribe lo que digan los datos** y se revisa el diseño.
+
+En la medición del 2026-11-16, vectorial e híbrida empatan: ambos aciertan
+5/5 literales, 5/7 coloquiales y 3/3 de varios artículos. BM25 acierta
+5/5, 3/7 y 3/3 respectivamente. No se confirma que la híbrida gane ni que
+BM25 supere a la vectorial en las literales; en estas últimas hay un empate.
+
+Con ese resultado se propone conservar `hibrida`, que mantiene la interfaz
+actual y `puntaje_vectorial` para IA-016. La muestra es pequeña: una pregunta
+representa 6.7 puntos porcentuales del recall global. La decisión se revisará
+cuando crezca el golden set.
+
+Resultados, salidas y análisis en la
+[evaluación fechada](../historial/evaluaciones/2026-11-16-comparativa-busqueda.md).
+Justificación de la elección en el
+[ADR-010](../historial/decisiones/ADR-010-modo-de-busqueda.md).
 
 ## Historial de mediciones
 
