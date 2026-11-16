@@ -147,33 +147,76 @@ textarea:focus {
   font-size: 1rem;
 }
 
-/* Citas con fondo gris claro para distinguirse */
-#citas {
+/* --- Citas desplegables (FE-003) --- */
+
+.citas-lista {
   list-style: none;
-  padding: 1rem 0;
-  margin: 0;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+
+.cita-detalle {
   background-color: #edf4fb;
+  border: 1px solid var(--borde);
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  padding: 0.75rem 1rem;
+}
+
+.cita-detalle summary {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--acento);
+}
+
+.cita-detalle summary:hover {
+  text-decoration: underline;
+}
+
+.cita-texto {
+  margin-top: 0.5rem;
+  white-space: pre-line;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* --- Estado de rechazo (FE-003) --- */
+
+.rechazo {
+  border: 1px solid var(--borde);
+  border-left: 4px solid #888;
   border-radius: 4px;
   padding: 1rem;
+  background-color: #f9f9f9;
+  color: var(--texto);
 }
 
-#citas li {
-  margin-bottom: 0.75rem;
-  padding-left: 1.5rem;
-  position: relative;
-  font-size: 1rem;
+.rechazo p {
+  margin-bottom: 0.5rem;
 }
 
-/* QUITAR ::before contador - las citations ya tienen [1]/[2] a mano */
-#citas li::before {
-  /* display: none; */ <-- QUITAR completamente
-  /* content: '[' counter(list-item) ']'; */ <-- QUITAR
-  /* position: absolute; */ <-- QUITAR
-  /* left: 0; */ <-- QUITAR
-  /* top: 0; */ <-- QUITAR
-  /* color: var(--acento); */ <-- QUITAR
-  /* font-weight: bold; */ <-- QUITAR
-  /* counter-increment: list-item; */ <-- QUITAR
+.rechazo p:last-child {
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+/* --- Estado de error (FE-003) --- */
+
+.error {
+  border: 1px solid #c0392b;
+  border-left: 4px solid #c0392b;
+  border-radius: 4px;
+  padding: 1rem;
+  background-color: #fdf0ef;
+  color: #7b241c;
+}
+
+/* --- Foco visible general (FE-003 accesibilidad) --- */
+
+:focus-visible {
+  outline: 3px solid var(--acento);
+  outline-offset: 2px;
 }
 
 /* --- Footer --- */
