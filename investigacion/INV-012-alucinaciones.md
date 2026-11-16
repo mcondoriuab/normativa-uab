@@ -121,3 +121,13 @@ Hallazgos clave, basados en las respuestas reales:
 - ¿Algunos chatbots son mejores que otros en esta norma específica? (Comparación limitada: solo se probaron Claude Sonnet y "otro" chatbot genérico; faltaría probar Gemini, ChatGPT, etc.)
 - ¿Cuál es la diferencia de comportamiento entre Claude Sonnet, ChatGPT y Gemini ante estas mismas preguntas sobre normativa UAB?
 - ¿Sería útil crear un "contexto especial" o "knowledge base" específica de la UAB para inyectarle a los chatbots para mejorar la precisión?
+
+## Notas de cierre
+
+**Qué aprendí:** Cuando la IA no tiene el contexto necesario da respuestas muy generales y no específicas sobre cuántos o cómo se realiza.
+
+**Qué falló:** Ningún de los chatbots pudo darme una respuesta muy específica como los años, notas o números exactos.
+
+**En qué usé IA:** Use la IA en dar el formato del archivo, la investigación con los chatbots y al subir mi rama.
+
+**Cuánto tardé:** Aproximadamente unos 30 minutos leyendo e implementando y entre otras cosas.
