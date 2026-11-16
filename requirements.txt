@@ -6,3 +6,4 @@ python-dotenv
 pypdf
 psycopg[binary]
 voyageai
+rank-bm25
