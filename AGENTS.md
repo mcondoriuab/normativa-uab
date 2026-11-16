@@ -30,6 +30,9 @@ entero antes de escribir nada.
    algo falla, dilo; no lo maquilles.
 7. Ayuda al estudiante a rellenar **Notas de cierre** con sus palabras: qué
    aprendió, qué falló y en qué se usó la IA.
+8. Antes de abrir el PR, revisa la tarea con la skill
+   `.claude/skills/revisar-antes-del-pr/SKILL.md`. Si tu herramienta no carga
+   skills, lee ese archivo y sigue sus pasos.
 
 ## Estilo del código
 
