@@ -78,3 +78,15 @@ def leer_fragmentos() -> list[dict]:
             "select id, documento, articulo, pagina, texto from fragmentos order by id"
         ).fetchall()
     return filas
+
+
+def guardar_consulta(
+    pregunta: str, rechazada: bool, ids_citados: list[str], latencia_ms: int
+) -> None:
+    """Guarda la pregunta y sus resultados sin datos de quien la envió."""
+    sql = """
+        insert into consultas (pregunta, rechazada, ids_citados, latencia_ms)
+        values (%s, %s, %s, %s)
+    """
+    with conectar() as conexion:
+        conexion.execute(sql, (pregunta, rechazada, ids_citados, latencia_ms))
