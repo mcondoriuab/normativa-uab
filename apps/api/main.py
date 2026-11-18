@@ -1,15 +1,31 @@
+import logging
+import time
+from contextlib import asynccontextmanager
 from pathlib import Path
 
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
-from ia.db import conectar
+from ia.db import conectar, guardar_consulta
+from ia.hibrida import cargar
+from ia.responder import responder
 
-app = FastAPI(title="Asistente de Normativa UAB")
+# Uvicorn configura este logger para que el mensaje de arranque sea visible.
+registro = logging.getLogger("uvicorn.error")
 
-AVISO = "Herramienta de apoyo. El texto oficial y vinculante es el publicado por la universidad."
+
+@asynccontextmanager
+async def ciclo_de_vida(app: FastAPI):
+    """Prepara el índice antes de que la API acepte la primera pregunta."""
+    inicio = time.perf_counter()
+    cargar()
+    registro.info("Índice BM25 cargado en %.3f segundos.", time.perf_counter() - inicio)
+    yield
+
+
+app = FastAPI(title="Asistente de Normativa UAB", lifespan=ciclo_de_vida)
 
 # Se calcula desde este archivo para que funcione al arrancar desde cualquier carpeta.
 CARPETA_WEB = Path(__file__).resolve().parent.parent / "web"
@@ -50,25 +66,30 @@ def salud():
 
 @app.post("/preguntar", response_model=Respuesta)
 def preguntar(peticion: Peticion):
-    # Respuesta simulada (mock) hasta que el motor real llegue en BE-003.
-    if "rechazo" in peticion.pregunta.lower():
-        return Respuesta(
-            respuesta="No encontré esa información en la normativa disponible.",
-            rechazada=True,
-            citas=[],
-            aviso=AVISO,
+    inicio = time.perf_counter()
+    try:
+        respuesta = responder(peticion.pregunta)
+    except Exception:
+        registro.exception("No se pudo generar la respuesta del asistente.")
+        raise HTTPException(
+            status_code=503,
+            detail="El asistente no está disponible. Inténtalo más tarde.",
         )
 
-    citas = [
-        Cita(n=1, documento="ejemplo", articulo="1", pagina=1, texto="(respuesta simulada)"),
-        Cita(n=2, documento="ejemplo", articulo=None, pagina=2, texto="(respuesta simulada)"),
-    ]
-    return Respuesta(
-        respuesta="Esta es una respuesta simulada [1]. Más adelante vendrá del motor real [2].",
-        rechazada=False,
-        citas=citas,
-        aviso=AVISO,
-    )
+    latencia_ms = int((time.perf_counter() - inicio) * 1000)
+    ids_citados = []
+    for cita in respuesta["citas"]:
+        if cita["articulo"] is None:
+            identificador = cita["documento"]
+        else:
+            identificador = f"{cita['documento']}#art-{cita['articulo']}"
+        ids_citados.append(identificador)
+
+    try:
+        guardar_consulta(peticion.pregunta, respuesta["rechazada"], ids_citados, latencia_ms)
+    except Exception:
+        registro.exception("No se pudo guardar la consulta anónima.")
+    return respuesta
 
 
 # Va al final: si se monta antes, la web en "/" tapa las rutas de la API.
