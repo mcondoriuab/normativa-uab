@@ -9,6 +9,7 @@ const formulario = document.getElementById("formulario");
 const seccionRespuesta = document.getElementById("respuesta");
 const campoPregunta = document.getElementById("pregunta");
 const botonEnviar = formulario.querySelector("button[type='submit']");
+const burbujaPregunta = document.getElementById("pregunta-enviada");
 
 /* ---------- funciones de pintado ---------- */
 
@@ -164,6 +165,10 @@ formulario.addEventListener("submit", function (evento) {
   if (textoPregunta === "") {
     return;
   }
+
+  /* La pregunta se muestra como burbuja; textContent evita XSS */
+  burbujaPregunta.textContent = textoPregunta;
+  burbujaPregunta.hidden = false;
 
   enviarPregunta(textoPregunta);
 });

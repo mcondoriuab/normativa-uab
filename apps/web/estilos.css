@@ -1,173 +1,155 @@
 /* ========================================
-   ESTILO FE-001 - Normativa UAB
-   Variables: --fondo, --texto, --acento, --borde
+   ESTILO – Normativa UAB (diseño B: conversación)
+   Colores tomados de la web de la UAB.
+   Móvil primero; a partir de 768px, ajustes de escritorio.
    ======================================== */
 
-/* Variables oficiales -- pedir en la tarea */
 :root {
-  --fondo: #f4f8fc;
-  --texto: #1f2d3d;
-  --acento: #0056A6;
-  --borde: #c8d8e8;
+  --fondo: #ffffff;
+  --superficie: #f2f4f6;      /* burbuja del asistente */
+  --texto: #0b1533;
+  --texto-suave: #4a5568;
+  --acento: #003264;          /* azul UAB: botón y enlaces */
+  --acento-usuario: #213773;  /* burbuja de la pregunta */
+  --naranja: #d97920;         /* solo decoración: con texto no llega a 4.5:1 */
+  --borde: #e3e6ea;
+  --cita-fondo: #f3f6fc;
+  --cita-borde: #c9d6ec;
 }
 
-/* --- Reset y base --- */
+/* --- Base --- */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* --- Body con variables --- */
 body {
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   background-color: var(--fondo);
   color: var(--texto);
-  line-height: 1.6;
-  margin: 0 auto;
-  padding: 2rem;
-  /* max-width: 800px */ <-- QUITAR según revisión
-  /* width: 100%; */   <-- body ya es full width
+  line-height: 1.5;
+  font-size: 16px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* --- Header --- */
+/* Oculta un texto a la vista pero no al lector de pantalla */
+.solo-lector {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* --- Cabecera --- */
 header {
-  text-align: center;
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--borde);
+  border-bottom: 3px solid var(--naranja);
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem 1.5rem;
 }
 
 header h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.subtitulo {
+  font-weight: 500;
   color: var(--acento);
-  font-size: 1.75rem;
-  margin-bottom: 0.5rem;
 }
 
-/* Texto del aviso legal con estilo para que no parezca error */
 .aviso-legal {
-  background-color: var(--fondo);
-  color: var(--texto);
-  padding: 0.5rem 1rem;
-  margin: 1rem 0;
-  border: 1px solid var(--borde);
-  border-radius: 4px;
   font-size: 0.875rem;
-  /* Evitar que sea < 16px: 0.875rem = 14px, así que forzamos 16px */
-  font-size: 16px;
-  line-height: 1.5;
+  color: var(--texto-suave);
 }
 
-/* --- Form --- */
-.form-section {
-  background-color: var(--fondo);
-  padding: 2rem;
-  border-radius: 8px;
-  margin-bottom: 2rem;
-  border: 1px solid var(--borde);
-}
-
-.form-section h2 {
-  color: var(--texto);
-  margin-bottom: 1.5rem;
-  font-size: 1.25rem;
-  border-left: 3px solid var(--acento);
-  padding-left: 0.5rem;
-}
-
-label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  font-size: 0.875rem;
-}
-
-/* Botón ocupar todo ancho en móvil */
-button {
-  background-color: var(--acento);
-  color: white;
-  border: none;
-  padding: 0.875rem;
-  border-radius: 4px;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
+/* --- Conversación --- */
+main {
+  flex: 1;
   width: 100%;
-  margin-top: 0.5rem;
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
-button:hover {
-  opacity: 0.9;
+.conversacion {
+  flex: 1;
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
 }
 
-button:focus-visible {
-  outline: 2px solid var(--texto);
-  outline-offset: 2px;
+.burbuja-usuario {
+  align-self: flex-end;
+  max-width: 85%;
+  background-color: var(--acento-usuario);
+  color: #ffffff;
+  border-radius: 18px 18px 4px 18px;
+  padding: 0.625rem 0.875rem;
+  white-space: pre-line;
 }
 
-textarea {
-  width: 100%;
-  min-height: 120px;
-  padding: 0.75rem;
-  margin-bottom: 1rem;
-  border: 1px solid var(--borde);
-  border-radius: 4px;
-  font-size: 1rem;
-  font-family: inherit;
-  resize: vertical;
-  background-color: white;
-  color: var(--texto);
+.burbuja-usuario[hidden] {
+  display: none;
 }
 
-textarea:focus {
-  outline: none;
-  border-color: var(--acento);
-  box-shadow: 0 0 0 3px rgba(0, 86, 166, 0.15);
+/* La respuesta y los mensajes de estado se ven como burbujas del asistente */
+.burbuja-asistente,
+.respuesta-section > p {
+  align-self: flex-start;
+  max-width: 92%;
+  background-color: var(--superficie);
+  border-radius: 18px 18px 18px 4px;
+  padding: 0.75rem 1rem;
 }
 
-/* --- Respuesta --- */
 .respuesta-section {
-  background-color: var(--fondo);
-  padding: 2rem;
-  border-radius: 8px;
-  margin-bottom: 2rem;
-  border: 1px solid var(--borde);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.respuesta-section h2 {
-  color: var(--texto);
-  margin-bottom: 1.5rem;
-  font-size: 1.25rem;
-  border-left: 3px solid var(--acento);
-  padding-left: 0.5rem;
+.respuesta-section h3 {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--texto-suave);
+  margin-top: 0.25rem;
 }
 
-#respuesta-texto {
-  margin-bottom: 2rem;
-  font-size: 1rem;
-}
-
-/* --- Citas desplegables (FE-003) --- */
-
+/* --- Citas desplegables --- */
 .citas-lista {
   list-style: none;
-  padding: 0;
-  margin: 1rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  max-width: 92%;
 }
 
 .cita-detalle {
-  background-color: #edf4fb;
-  border: 1px solid var(--borde);
-  border-radius: 4px;
-  margin-bottom: 0.5rem;
-  padding: 0.75rem 1rem;
+  background-color: var(--cita-fondo);
+  border: 1px solid var(--cita-borde);
+  border-radius: 12px;
+  padding: 0.625rem 0.875rem;
 }
 
 .cita-detalle summary {
   cursor: pointer;
-  font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.875rem;
+  font-weight: 600;
   color: var(--acento);
+  min-height: 24px;
 }
 
 .cita-detalle summary:hover {
@@ -175,93 +157,145 @@ textarea:focus {
 }
 
 .cita-texto {
-  margin-top: 0.5rem;
+  margin-top: 0.375rem;
   white-space: pre-line;
-  font-size: 0.9rem;
-  line-height: 1.5;
+  font-size: 0.875rem;
+  color: #3b4148;
 }
 
-/* --- Estado de rechazo (FE-003) --- */
-
+/* --- Estado de rechazo: neutro, no es un error --- */
 .rechazo {
-  border: 1px solid var(--borde);
-  border-left: 4px solid #888;
-  border-radius: 4px;
-  padding: 1rem;
-  background-color: #f9f9f9;
-  color: var(--texto);
-}
-
-.rechazo p {
-  margin-bottom: 0.5rem;
+  align-self: flex-start;
+  max-width: 92%;
+  background-color: var(--superficie);
+  border: 1px dashed #b9c0c8;
+  border-radius: 18px 18px 18px 4px;
+  padding: 0.75rem 1rem;
 }
 
 .rechazo p:last-child {
-  margin-bottom: 0;
-  font-style: italic;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--texto-suave);
 }
 
-/* --- Estado de error (FE-003) --- */
-
+/* --- Estado de error --- */
 .error {
-  border: 1px solid #c0392b;
-  border-left: 4px solid #c0392b;
-  border-radius: 4px;
-  padding: 1rem;
-  background-color: #fdf0ef;
-  color: #7b241c;
+  align-self: flex-start;
+  max-width: 92%;
+  background-color: #fdeeee;
+  border: 1px solid #f0c4c4;
+  border-radius: 18px 18px 18px 4px;
+  padding: 0.75rem 1rem;
+  color: #7a1818;
 }
 
-/* --- Foco visible general (FE-003 accesibilidad) --- */
+/* --- Barra de pregunta (fija abajo) --- */
+.barra-pregunta {
+  position: sticky;
+  bottom: 0;
+  border-top: 1px solid var(--borde);
+  background-color: #fafbfc;
+  padding: 0.75rem 1rem 1rem;
+}
 
+label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.375rem;
+}
+
+.fila-pregunta {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+textarea {
+  flex: 1;
+  min-width: 0;
+  min-height: 48px;
+  padding: 0.75rem 0.875rem;
+  border: 1px solid #a9b1ba;
+  border-radius: 14px;
+  font: inherit;
+  color: var(--texto);
+  background-color: #ffffff;
+  resize: none;
+}
+
+button {
+  min-height: 48px;
+  padding: 0 1.25rem;
+  border: none;
+  border-radius: 14px;
+  background-color: var(--acento);
+  color: #ffffff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--acento-usuario);
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+/* --- Foco visible (accesibilidad) --- */
 :focus-visible {
-  outline: 3px solid var(--acento);
+  outline: 3px solid var(--naranja);
   outline-offset: 2px;
 }
 
-/* --- Footer --- */
+/* --- Pie --- */
 footer {
+  padding: 0.75rem 1rem 1.25rem;
   text-align: center;
-  margin-top: 3rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--borde);
-  color: var(--texto);
-  font-size: 16px; /* Forzar 16px, 0.875rem = 14px es demasiado pequeño */
-  margin: 0 auto;
-  max-width: 100%;
+  font-size: 0.875rem;
+  color: var(--texto-suave);
 }
 
 footer a {
   color: var(--acento);
-  text-decoration: none;
 }
 
-footer a:hover {
-  text-decoration: underline;
-}
-
-/* --- Responsive - MÓVIL PRIMERO --- */
-/* Base móvil: full width, sin max-width restrictivo */
-
-/* A partir de 768px (escritorio) */
+/* --- Escritorio --- */
 @media (min-width: 768px) {
-  body {
-    /* max-width: 720px */ <-- Qué hacer aquí según tamaño
-    margin: 0 auto;
-    /* width: auto; */
-  }
-
-  /* En móvil el botón ya es full width por defecto */
-  /* En escritorio podemos centrar o dejar como está */
-
   header {
-    padding-bottom: 2rem;
+    padding: 1rem 2rem;
   }
 
-  .form-section,
-  .respuesta-section {
-    padding: 2.5rem;
-    max-width: 720px;
-    margin: 0 auto;
+  header h1 {
+    font-size: 1.375rem;
+  }
+
+  .conversacion {
+    padding: 2rem 1rem;
+    gap: 1.25rem;
+  }
+
+  .burbuja-usuario {
+    max-width: 80%;
+  }
+
+  .burbuja-asistente,
+  .respuesta-section > p,
+  .citas-lista,
+  .rechazo,
+  .error {
+    max-width: 88%;
+  }
+
+  .barra-pregunta {
+    border-radius: 16px 16px 0 0;
+  }
+
+  textarea {
+    resize: vertical;
   }
 }
