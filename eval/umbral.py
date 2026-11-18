@@ -12,6 +12,7 @@ import json
 import pathlib
 
 from ia.hibrida import buscar
+from ia.responder import MODO_BUSQUEDA
 
 RUTA_PREGUNTAS = pathlib.Path(__file__).with_name("preguntas.jsonl")
 UMBRALES_CANDIDATOS = [0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6]
@@ -45,7 +46,7 @@ def buscar_todas() -> list[dict]:
     resultados = []
 
     for pregunta in preguntas:
-        fragmentos = buscar(pregunta["pregunta"], modo="hibrida", k=5)
+        fragmentos = buscar(pregunta["pregunta"], modo=MODO_BUSQUEDA, k=5)
         puntaje = mayor_puntaje_vectorial(fragmentos)
         resultados.append({
             "pregunta": pregunta["pregunta"],
@@ -87,37 +88,13 @@ def imprimir_tabla_umbral(resultados: list[dict]) -> None:
     en_corpus = [r for r in resultados if r["en_corpus"]]
     fuera_corpus = [r for r in resultados if not r["en_corpus"]]
 
-    # Ajustar umbrales candidatos según el rango real de puntajes
-    todos_puntajes = [
-        r["mayor_puntaje"] for r in resultados
-        if r["mayor_puntaje"] is not None
-    ]
-    if not todos_puntajes:
-        print("\nNo hay puntajes vectoriales. Verifica la conexión a la base de datos.")
-        return
-
-    min_p = min(todos_puntajes)
-    max_p = max(todos_puntajes)
-
-    # Si los puntajes están en otra escala, ajustar candidatos
-    if max_p > 1.0:
-        # Escala de distancia (mayor = más relevante) o escala diferente
-        paso = (max_p - min_p) / 7
-        umbrales = [round(min_p + i * paso, 2) for i in range(1, 8)]
-    elif max_p < 0.3:
-        # Puntajes muy bajos, usar escala ajustada
-        paso = max_p / 7
-        umbrales = [round(paso * i, 4) for i in range(1, 8)]
-    else:
-        umbrales = UMBRALES_CANDIDATOS
-
     print("\n" + "=" * 70)
     print("TABLA DE UMBRALES CANDIDATOS")
     print("=" * 70)
-    print(f"\n{'Umbral':>8}  {'Rechaza en corpus':>18}  {'Rechaza fuera corpus':>21}  {'Acierta fuera':>12}")
+    print(f"\n{'Umbral':>8}  {'Rechaza en corpus':>18}  {'Rechaza fuera corpus':>21}")
     print("-" * 70)
 
-    for umbral in umbrales:
+    for umbral in UMBRALES_CANDIDATOS:
         rechazadas_corpus = sum(
             1 for r in en_corpus
             if r["mayor_puntaje"] is None or r["mayor_puntaje"] < umbral
@@ -126,9 +103,7 @@ def imprimir_tabla_umbral(resultados: list[dict]) -> None:
             1 for r in fuera_corpus
             if r["mayor_puntaje"] is None or r["mayor_puntaje"] < umbral
         )
-        acierta_fuera = f"{rechazadas_fuera}/{len(fuera_corpus)}"
-
-        print(f"  {umbral:>8.4f}  {rechazadas_corpus:>18}  {rechazadas_fuera:>21}  {acierta_fuera:>12}")
+        print(f"  {umbral:>8.4f}  {rechazadas_corpus:>18}  {rechazadas_fuera:>21}")
 
     print("\n" + "-" * 70)
     print("Nota: Se busca rechazar TODAS (o casi todas) las fuera de corpus")

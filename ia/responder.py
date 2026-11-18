@@ -9,11 +9,12 @@ import json
 import re
 import sys
 
+from ia.hibrida import buscar
 from ia.llm import generar
 from ia.prompts import FRASE_RECHAZO, SISTEMA
 
 MODO_BUSQUEDA = "hibrida"      # lo confirma o lo cambia el ADR de IA-012
-UMBRAL_RELEVANCIA = 0.0        # se calibra en la Parte 2
+UMBRAL_RELEVANCIA = 0.5       # calibrado en historial/evaluaciones/2026-11-16-umbral.md
 AVISO = (
     "Herramienta de apoyo. El texto oficial y vinculante es el publicado por "
     "la universidad."
@@ -70,10 +71,6 @@ def respuesta_rechazo() -> dict:
 
 def responder(pregunta: str) -> dict:
     """Busca, redacta con el modelo y devuelve la respuesta con sus citas."""
-    # Import local a propósito: mientras no exista ia/hibrida.py (IA-007),
-    # importarlo arriba impediría probar los ayudantes de este módulo.
-    from ia.hibrida import buscar
-
     resultados = buscar(pregunta, modo=MODO_BUSQUEDA, k=5)
 
     # Un resultado puede venir solo de BM25 y no traer puntaje vectorial.
